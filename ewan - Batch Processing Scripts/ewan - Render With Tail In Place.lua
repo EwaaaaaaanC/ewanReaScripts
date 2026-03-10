@@ -3,6 +3,8 @@
 -- @version 1.0
 -- @about
 --   Renders each Item Separately, with a tail. Mutes other items to prevent any render overlap.
+-- @noindex
+-- NoIndex: true
 
 local numberOfSelectedItems = reaper.CountSelectedMediaItems(activeProjectIndex)
 local retval, inputs_csv = reaper.GetUserInputs("ewan: ReverseVerber", 2, "Fade Durations (ms)","50,50")

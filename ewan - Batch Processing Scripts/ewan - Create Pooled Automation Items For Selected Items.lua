@@ -3,7 +3,8 @@
 -- @version 1.0
 -- @about
 --   Run this script to create pooled automation items for all of your selected media items.
-
+-- @noindex
+-- NoIndex: true
 
 -- HOW TO USE: Select items and then select an envelope lane.
 -- The duplicated automation items are scaled in length to conform to the first item.
