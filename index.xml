@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="57f6a584b6be3de07aea23bbb9b3a92665dbd4a4">
-  <category name="Example">
+<index version="1" name="ewan's ReaScripts" commit="ac5ac22610af0ea08efd38ef2b5380e602751a03">
+  <category name="Example/subFolderTest">
     <reapack name="ewan_Hello world.lua" type="script" desc="THE TEST SCRIPT FOR EWAN">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
@@ -11,8 +11,8 @@
 }
 ]]></description>
       </metadata>
-      <version name="1.0" author="ewan" time="2026-03-10T20:03:18Z">
-        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/57f6a584b6be3de07aea23bbb9b3a92665dbd4a4/Example/ewan_Hello%20world.lua</source>
+      <version name="1.0" author="ewan" time="2026-03-10T20:13:31Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/ac5ac22610af0ea08efd38ef2b5380e602751a03/Example/subFolderTest/ewan_Hello%20world.lua</source>
       </version>
     </reapack>
   </category>
