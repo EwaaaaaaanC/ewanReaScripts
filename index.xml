@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="b4565c874bf7da74193fb0bd96bd2ddaff287ac4">
+<index version="1" name="ewan's ReaScripts" commit="312eee41c5edb265118a484332fb03be3f857663">
+  <category name="ewan - Batch Processing Scripts">
+    <reapack name="ewan - Batch Processing Package.txt" type="midinotenames" desc="Batch Processing Scripts">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 A set of Batch Processing Scripts for Sound Design and Dialogue Editing.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="ewan" time="2026-03-10T21:09:55Z">
+        <source>https://github.com/EwaaaaaaanC/ewanReaScripts/raw/312eee41c5edb265118a484332fb03be3f857663/ewan%20-%20Batch%20Processing%20Scripts/ewan%20-%20Batch%20Processing%20Package.txt</source>
+        <source file="ewan - Create Pooled Automation Items For Selected Items.lua">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/312eee41c5edb265118a484332fb03be3f857663/ewan%20-%20Batch%20Processing%20Scripts/ewan%20-%20Create%20Pooled%20Automation%20Items%20For%20Selected%20Items.lua</source>
+      </version>
+    </reapack>
+  </category>
   <category name="Example/subFolderTest">
     <reapack name="ewan_Hello world.lua" type="script" desc="THE TEST SCRIPT FOR EWAN">
       <metadata>
