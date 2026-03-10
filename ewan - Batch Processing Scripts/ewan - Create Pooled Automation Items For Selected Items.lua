@@ -2,11 +2,11 @@
 -- @author ewan
 -- @version 1.0
 -- @about
--- HOW TO USE: Select items and then select an envelope lane.
--- Run this script to create pooled automation items for all of your selected media items.
--- The duplicated automation items are scaled in length to conform to the first item.
--- In this way both fade-ins and fade-out will align with item starts and ends.
--- To disable this stretching/squashing behaviour, delete lines 74 and 75
+--   HOW TO USE: Select items and then select an envelope lane.
+--   Run this script to create pooled automation items for all of your selected media items.
+--   The duplicated automation items are scaled in length to conform to the first item.
+--   In this way both fade-ins and fade-out will align with item starts and ends.
+--   To disable this stretching/squashing behaviour, delete lines 74 and 75
 
 
 numberOfSelectedItems = reaper.CountSelectedMediaItems(activeProjectIndex)
