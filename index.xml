@@ -1,35 +1,320 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="0.7" name="ewan's ReaScripts" commit="a7ab97b8d6b5c2a89d1f28e499898f965a6f3630">
+<index version="1" name="ewan's ReaScripts" commit="c81f0e302b1ee38c5c8fd65635b6409511d34d41">
   <category name="ewan - Batch Processing Scripts">
-    <reapack name="ewan - Batch Processing Package.lua" type="script" desc="[nomain] Batch Processing Scripts">
+    <reapack name="ewan - Create Pooled Automation Items For Selected Items.lua" type="script" desc="Create Pooled Automation Items For Selected Items">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 A set of Batch Processing Scripts for Sound Design and Dialogue Editing.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Run this script to create pooled automation items for all of your selected media items.\par}
 }
 ]]></description>
       </metadata>
-      <version name="1.0" author="ewan" time="2026-03-10T21:25:04Z">
-        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/26dd945c8b1d811beb3ff20c699f67c711afb7e9/ewan%20-%20Batch%20Processing%20Scripts/ewan%20-%20Batch%20Processing%20Package.lua</source>
-        <source type="script" file="ewan - Create Pooled Automation Items For Selected Items.lua">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/26dd945c8b1d811beb3ff20c699f67c711afb7e9/ewan%20-%20Batch%20Processing%20Scripts/ewan%20-%20Create%20Pooled%20Automation%20Items%20For%20Selected%20Items.lua</source>
+      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Batch%20Processing%20Scripts/ewan%20-%20Create%20Pooled%20Automation%20Items%20For%20Selected%20Items.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Create Regions for Item Clusters (and merge overlapping regions in time selection).lua" type="script" desc="Create Regions for Item Clusters (and merge overlapping regions in time selection)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Creates Regions for Item Clusters \u8212- Sets of overlapping items.\par}
+}
+]]></description>
+      </metadata>
+      <version name="0.9" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Batch%20Processing%20Scripts/ewan%20-%20Create%20Regions%20for%20Item%20Clusters%20(and%20merge%20overlapping%20regions%20in%20time%20selection).lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Do Action For Each Cluster In Selection.lua" type="script" desc="Do Action For Each Cluster in Selection">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Define actions in this script which will run on each item cluster separately.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Batch%20Processing%20Scripts/ewan%20-%20Do%20Action%20For%20Each%20Cluster%20In%20Selection.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Glue Each Cluster In Selection Separately.lua" type="script" desc="Glue Each Cluster in Selection Seperately">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Glues each Item Cluster in sequence.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Batch%20Processing%20Scripts/ewan%20-%20Glue%20Each%20Cluster%20In%20Selection%20Separately.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Render Reverse Reverb With Tail In Place.lua" type="script" desc="Render Reverse Reverb With Tail In Place">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Renders the reverb on the selected items and handles reverse and un-reverse logic to create reverse reverb effects.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Batch%20Processing%20Scripts/ewan%20-%20Render%20Reverse%20Reverb%20With%20Tail%20In%20Place.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Render With Tail In Place.lua" type="script" desc="Render With Tail In Place">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Renders each Item Separately, with a tail. Mutes other items to prevent any render overlap.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Batch%20Processing%20Scripts/ewan%20-%20Render%20With%20Tail%20In%20Place.lua</source>
       </version>
     </reapack>
   </category>
-  <category name="Example/subFolderTest">
-    <reapack name="ewan_Hello world.lua" type="script" desc="THE TEST SCRIPT FOR EWAN">
+  <category name="ewan - Color Item or Takes Script">
+    <reapack name="ewan - Color Items or Takes Blue.lua" type="script" desc="Colour Items or Takes Blue">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 This script is a test.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Run this script to colour items or takes.\par}
 }
 ]]></description>
       </metadata>
-      <version name="1.0" author="ewan" time="2026-03-10T20:13:31Z">
-        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/ac5ac22610af0ea08efd38ef2b5380e602751a03/Example/subFolderTest/ewan_Hello%20world.lua</source>
+      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Color%20Item%20or%20Takes%20Script/ewan%20-%20Color%20Items%20or%20Takes%20Blue.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Color Items or Takes Green.lua" type="script" desc="Colour Items or Takes Green">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Run this script to colour items or takes.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Color%20Item%20or%20Takes%20Script/ewan%20-%20Color%20Items%20or%20Takes%20Green.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Color Items or Takes Orange.lua" type="script" desc="Colour Items or Takes Orange">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Run this script to colour items or takes.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Color%20Item%20or%20Takes%20Script/ewan%20-%20Color%20Items%20or%20Takes%20Orange.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Color Items or Takes Pink.lua" type="script" desc="Colour Items or Takes Pink">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Run this script to colour items or takes.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Color%20Item%20or%20Takes%20Script/ewan%20-%20Color%20Items%20or%20Takes%20Pink.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Color Items or Takes Red.lua" type="script" desc="Colour Items or Takes Red">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Run this script to colour items or takes.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Color%20Item%20or%20Takes%20Script/ewan%20-%20Color%20Items%20or%20Takes%20Red.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Color Items or Takes Yellow.lua" type="script" desc="Colour Items or Takes Yellow">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Run this script to colour items or takes.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Color%20Item%20or%20Takes%20Script/ewan%20-%20Color%20Items%20or%20Takes%20Yellow.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="ewan - Create Marker Scripts">
+    <reapack name="ewan - Create Marker (Green) At Edit Cursor.lua" type="script" desc="Create Green Marker at Edit Cursor">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Create Green Marker at Edit Cursor\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Create%20Marker%20Scripts/ewan%20-%20Create%20Marker%20(Green)%20At%20Edit%20Cursor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Create Marker (Orange) At Edit Cursor.lua.lua" type="script" desc="Create Orange Marker at Edit Cursor">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Create Orange Marker at Edit Cursor\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Create%20Marker%20Scripts/ewan%20-%20Create%20Marker%20(Orange)%20At%20Edit%20Cursor.lua.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Create Marker (Red) At Edit Cursor.lua.lua" type="script" desc="Create Red Marker at Edit Cursor">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Create Red Marker at Edit Cursor\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Create%20Marker%20Scripts/ewan%20-%20Create%20Marker%20(Red)%20At%20Edit%20Cursor.lua.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Create Marker from Clipboard At Edit Cursor.lua" type="script" desc="Create Marker from Clipboard at Edit Cursor">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Create Marker from Clipboard at Edit Cursor\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Create%20Marker%20Scripts/ewan%20-%20Create%20Marker%20from%20Clipboard%20At%20Edit%20Cursor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Create Marker from Clipboard with Find and Replace.lua" type="script" desc="Create Marker from Clipboard at Edit Cursor with Find and Replace">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Create Marker from Clipboard at Edit Cursor with Find and Replace\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Create%20Marker%20Scripts/ewan%20-%20Create%20Marker%20from%20Clipboard%20with%20Find%20and%20Replace.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Create Regions from Item Names (file extensions removed).lua" type="script" desc="Creates Regions from Item Names (file extensions removed)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Creates Regions from Item Names (file extensions removed)\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Create%20Marker%20Scripts/ewan%20-%20Create%20Regions%20from%20Item%20Names%20(file%20extensions%20removed).lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="ewan - Editing Scripts">
+    <reapack name="ewan - Breath Trim SMART.lua" type="script" desc="Deprecated but here for fun">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Deprecated but here for fun\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Editing%20Scripts/ewan%20-%20Breath%20Trim%20SMART.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="ewan - Naming Scripts">
+    <reapack name="ewan - Find and Replace Item Names.lua" type="script" desc="Find and Replace Item Names">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Find and Replace Item Names\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Naming%20Scripts/ewan%20-%20Find%20and%20Replace%20Item%20Names.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Remove Extensions from Item Name.lua" type="script" desc="Remove Extensions from Item Name">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Remove Extensions from Item Name\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Naming%20Scripts/ewan%20-%20Remove%20Extensions%20from%20Item%20Name.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Rename Items from Clipboard with Find and Replace.lua" type="script" desc="Rename Items From Clipboard with Find and Replace">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Rename Items From Clipboard with Find and Replace\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Naming%20Scripts/ewan%20-%20Rename%20Items%20from%20Clipboard%20with%20Find%20and%20Replace.lua</source>
       </version>
     </reapack>
   </category>
