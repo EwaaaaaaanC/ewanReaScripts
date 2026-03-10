@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="26dd945c8b1d811beb3ff20c699f67c711afb7e9">
+<index version="1" name="ewan's ReaScripts" commit="a7ab97b8d6b5c2a89d1f28e499898f965a6f3630">
   <category name="ewan - Batch Processing Scripts">
-    <reapack name="ewan - Batch Processing Package.lua" type="script" desc="Batch Processing Scripts">
+    <reapack name="ewan - Batch Processing Package.lua" type="script" desc="[nomain] Batch Processing Scripts">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
