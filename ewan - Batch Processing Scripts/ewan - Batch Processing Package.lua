@@ -4,4 +4,4 @@
 -- @about
 --   A set of Batch Processing Scripts for Sound Design and Dialogue Editing.
 -- @provides
---   [script] [main] ewan - Create Pooled Automation Items For Selected Items.lua
+--   [script main] ewan - Create Pooled Automation Items For Selected Items.lua
