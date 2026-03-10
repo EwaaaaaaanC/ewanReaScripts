@@ -3,8 +3,6 @@
 -- @version 1.0
 -- @about
 --   Glues each Item Cluster in sequence.
--- @noindex
--- NoIndex: true
 
 -- ewan says ENJOY!
 ClustersProcessed = 0

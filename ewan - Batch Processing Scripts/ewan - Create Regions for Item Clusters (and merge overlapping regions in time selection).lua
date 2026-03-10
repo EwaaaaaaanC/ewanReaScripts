@@ -3,8 +3,6 @@
 -- @version 0.9
 -- @about
 --   Creates Regions for Item Clusters — Sets of overlapping items.
--- @noindex
--- NoIndex: true
 
 -- ewan says HELLO!
 

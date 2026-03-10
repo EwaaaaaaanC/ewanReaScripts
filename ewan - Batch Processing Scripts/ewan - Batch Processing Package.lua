@@ -1,7 +1,0 @@
--- @description [nomain] Batch Processing Scripts
--- @author ewan
--- @version 1.0
--- @about
---   A set of Batch Processing Scripts for Sound Design and Dialogue Editing.
--- @provides
---   [script main] ewan - Create Pooled Automation Items For Selected Items.lua

@@ -3,8 +3,6 @@
 -- @version 1.0
 -- @about
 --   Define actions in this script which will run on each item cluster separately.
--- @noindex
--- NoIndex: true
 
 -- ewan says ENJOY!
 ClustersProcessed = 0

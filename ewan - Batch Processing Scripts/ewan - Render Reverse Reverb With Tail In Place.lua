@@ -3,8 +3,6 @@
 -- @version 1.0
 -- @about
 --   Renders the reverb on the selected items and handles reverse and un-reverse logic to create reverse reverb effects.
--- @noindex
--- NoIndex: true
 
 local numberOfSelectedItems = reaper.CountSelectedMediaItems(activeProjectIndex)
 local retval, inputs_csv = reaper.GetUserInputs("ewan: ReverseVerber", 2, "Fade Durations (ms)","50,50")
