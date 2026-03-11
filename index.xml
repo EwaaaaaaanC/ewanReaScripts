@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="c81f0e302b1ee38c5c8fd65635b6409511d34d41">
+<index version="1" name="ewan's ReaScripts" commit="466a505697b340c1521be8931d6ed2c534d3e65c">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items.lua" type="script" desc="Create Pooled Automation Items For Selected Items">
       <metadata>
@@ -271,6 +271,48 @@
       </metadata>
       <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Editing%20Scripts/ewan%20-%20Breath%20Trim%20SMART.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Edit Tool.lua" type="script" desc="ewan's Edit Tool">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 ewan's edit tool for fades and cuts\par}
+}
+]]></description>
+      </metadata>
+      <version name="0.7" author="ewan" time="2026-03-11T02:56:54Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/466a505697b340c1521be8931d6ed2c534d3e65c/ewan%20-%20Editing%20Scripts/ewan%20-%20Edit%20Tool.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Remove Item Under Mouse Cursor.lua" type="script" desc="Remove Item Under mouse Cursor">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Remove Item Under mouse Cursor\par}
+}
+]]></description>
+      </metadata>
+      <version name="0.7" author="ewan" time="2026-03-11T02:56:54Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/466a505697b340c1521be8931d6ed2c534d3e65c/ewan%20-%20Editing%20Scripts/ewan%20-%20Remove%20Item%20Under%20Mouse%20Cursor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Split Item Under Mouse Cursor (select new item).lua" type="script" desc="Split item Under Mouse Cursor">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Split item Under Mouse Cursor\par}
+}
+]]></description>
+      </metadata>
+      <version name="0.7" author="ewan" time="2026-03-11T02:56:54Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/466a505697b340c1521be8931d6ed2c534d3e65c/ewan%20-%20Editing%20Scripts/ewan%20-%20Split%20Item%20Under%20Mouse%20Cursor%20(select%20new%20item).lua</source>
       </version>
     </reapack>
   </category>
