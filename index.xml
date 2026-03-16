@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="4c7fb513dea810226019b3486d73ebbf68f22b2b">
+<index version="1" name="ewan's ReaScripts" commit="b4d3d1b94b3df1eeac7604a070702f2f5dfb2e2a">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items.lua" type="script" desc="Create Pooled Automation Items For Selected Items">
       <metadata>
@@ -259,18 +259,18 @@
     </reapack>
   </category>
   <category name="ewan - Editing Scripts">
-    <reapack name="ewan - Breath Trim SMART.lua" type="script" desc="Deprecated but here for fun">
+    <reapack name="ewan - Edit Tool (Duo Mode).lua" type="script" desc="ewan's Edit Tool">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 Deprecated but here for fun\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 ewan's edit tool for fades and cuts\par}
 }
 ]]></description>
       </metadata>
-      <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
-        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Editing%20Scripts/ewan%20-%20Breath%20Trim%20SMART.lua</source>
+      <version name="0.7" author="ewan" time="2026-03-16T08:00:26Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/b4d3d1b94b3df1eeac7604a070702f2f5dfb2e2a/ewan%20-%20Editing%20Scripts/ewan%20-%20Edit%20Tool%20(Duo%20Mode).lua</source>
       </version>
     </reapack>
     <reapack name="ewan - Edit Tool.lua" type="script" desc="ewan's Edit Tool">
@@ -285,6 +285,9 @@
       </metadata>
       <version name="0.7" author="ewan" time="2026-03-11T02:56:54Z">
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/466a505697b340c1521be8931d6ed2c534d3e65c/ewan%20-%20Editing%20Scripts/ewan%20-%20Edit%20Tool.lua</source>
+      </version>
+      <version name="0.9" author="ewan" time="2026-03-16T08:00:26Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/b4d3d1b94b3df1eeac7604a070702f2f5dfb2e2a/ewan%20-%20Editing%20Scripts/ewan%20-%20Edit%20Tool.lua</source>
       </version>
     </reapack>
     <reapack name="ewan - Remove Item Under Mouse Cursor.lua" type="script" desc="Remove Item Under mouse Cursor">
