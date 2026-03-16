@@ -1,11 +1,11 @@
--- @description ewan's Edit Tool
+-- @description ewan's Edit Tool with Duo Mode
 -- @author ewan
 -- @version 1.1
 -- @about
 --   ewan's edit tool for fades and cuts
 
--- @changelog : Item Selection after trim will now only be the trimmed items.
---   
+-- @changelog
+--    + Item Selection after trim will now only be the trimmed items.
 
 -- README:
 -- This script allows access to several quick editing moves, designed with dialogue in mind.
