@@ -1,6 +1,6 @@
--- @description ewan's Edit Tool
+-- @description ewan's Edit Tool with Duo Mode
 -- @author ewan
--- @version 0.7
+-- @version 1.0
 -- @about
 --   ewan's edit tool for fades and cuts
 
