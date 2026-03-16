@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="56a3a1fad0f762973dd577019f3ce6adee40f6f0">
+<index version="1" name="ewan's ReaScripts" commit="a914f2ec21762ded7e0d66f102b87d17456bbff6">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items.lua" type="script" desc="Create Pooled Automation Items For Selected Items">
       <metadata>
@@ -290,8 +290,11 @@
       <version name="1.0" author="ewan" time="2026-03-16T08:05:22Z">
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/4ab5d9bccc0ac186f193bd3e300956394335ccd4/ewan%20-%20Editing%20Scripts/ewan%20-%20Edit%20Tool%20(Duo%20Mode).lua</source>
       </version>
+      <version name="1.1" author="ewan" time="2026-03-16T19:43:10Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/a914f2ec21762ded7e0d66f102b87d17456bbff6/ewan%20-%20Editing%20Scripts/ewan%20-%20Edit%20Tool%20(Duo%20Mode).lua</source>
+      </version>
     </reapack>
-    <reapack name="ewan - Edit Tool.lua" type="script" desc="ewan's Edit Tool">
+    <reapack name="ewan - Edit Tool.lua" type="script" desc="ewan's Edit Tool with Duo Mode">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
@@ -306,6 +309,9 @@
       </version>
       <version name="0.9" author="ewan" time="2026-03-16T08:00:26Z">
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/b4d3d1b94b3df1eeac7604a070702f2f5dfb2e2a/ewan%20-%20Editing%20Scripts/ewan%20-%20Edit%20Tool.lua</source>
+      </version>
+      <version name="1.1" author="ewan" time="2026-03-16T19:43:10Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/a914f2ec21762ded7e0d66f102b87d17456bbff6/ewan%20-%20Editing%20Scripts/ewan%20-%20Edit%20Tool.lua</source>
       </version>
     </reapack>
     <reapack name="ewan - Remove Item Under Mouse Cursor.lua" type="script" desc="Remove Item Under mouse Cursor">
@@ -416,7 +422,7 @@
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 some reaScripts made by ewan\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 some reaScripts made by ewan \u8212- you're welcome !\par}
 }
 ]]></description>
   </metadata>
