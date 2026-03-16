@@ -1,9 +1,11 @@
--- @description ewan's Edit Tool
+-- @description ewan's Edit Tool with Duo Mode
 -- @author ewan
--- @version 0.9
+-- @version 1.1
 -- @about
 --   ewan's edit tool for fades and cuts
 
+-- @changelog : Item Selection after trim will now only be the trimmed items.
+--   
 
 -- README:
 -- This script allows access to several quick editing moves, designed with dialogue in mind.
@@ -259,6 +261,9 @@ followingItem = reaper.SplitMediaItem(breathItem,endBounds)
   reaper.SetMediaItemInfo_Value(followingItem,"D_FADEINLEN",fadeTime)
   reaper.SetMediaItemInfo_Value(followingItem,"D_FADEINLEN_AUTO",fadeTime)
 
+  reaper.Main_OnCommand(40289,-1)
+  reaper.SetMediaItemSelected(breathItem,true)
+  
 end
 
 
@@ -324,8 +329,10 @@ function trimAreaWithFadesOnTrack (track,startBounds, endBounds,fadeTimeMS,trim)
 xfadeLength = fadeTimeMS
 local trimMult = 10^(trim/20)
 local itemCount, itemList = getItemsInBoundsForTrack(track,startBounds, endBounds)
+
 local editItemTrack = reaper.GetMediaItemTrack(itemList[1])
 local followingItem = reaper.SplitMediaItem(itemList[1],startBounds)
+local trimItemOne = followingItem
 reaper.SetMediaItemSelected(itemList[1],false)
 reaper.SetMediaItemSelected(followingItem,true)
  local editPos = reaper.GetMediaItemInfo_Value(itemList[1], "D_POSITION")
@@ -346,7 +353,6 @@ reaper.SetMediaItemSelected(followingItem,true)
  reaper.SetMediaItemInfo_Value(followingItem,"D_POSITION",followingPos - (xfadeLength*0.0005))
  reaper.SetMediaItemInfo_Value(followingItem,"D_VOL",followingVol*trimMult)
  reaper.SetMediaItemTakeInfo_Value(followingTake,"D_STARTOFFS",followingOffset - (xfadeLength*0.0005))
-
 
 local editItemTrack = reaper.GetMediaItemTrack(itemList[2])
 local followingItem = reaper.SplitMediaItem(itemList[2],endBounds)
@@ -371,8 +377,10 @@ reaper.SetMediaItemSelected(followingItem,true)
  reaper.SetMediaItemInfo_Value(followingItem,"D_POSITION",followingPos - (xfadeLength*0.0005))
  reaper.SetMediaItemTakeInfo_Value(followingTake,"D_STARTOFFS",followingOffset - (xfadeLength*0.0005))
 
-
-
+-- Now have only the trimmed items be selected.
+  reaper.Main_OnCommand(40289,-1)
+  reaper.SetMediaItemSelected(trimItemOne,true)
+  reaper.SetMediaItemSelected(itemList[2],true)
 
 --splitItemAtPosWithFades(itemList[1],startBounds,fadeTimeMS)
 --splitItemAtPosWithFades(itemList[2],endBounds,fadeTimeMS)
