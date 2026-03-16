@@ -1,4 +1,4 @@
--- @description ewan's Edit Tool with Duo Mode
+-- @description ewan's Edit Tool
 -- @author ewan
 -- @version 1.1
 -- @about
