@@ -3,6 +3,8 @@
 -- @version 1.0
 -- @about
 --   Deprecated but here for fun
+-- @noindex
+-- NoIndex: true
 
 reaper.Undo_BeginBlock()
 

@@ -1,6 +1,6 @@
 -- @description ewan's Edit Tool
 -- @author ewan
--- @version 0.9
+-- @version 0.7
 -- @about
 --   ewan's edit tool for fades and cuts
 
@@ -37,7 +37,7 @@
   -- Instead, the area within the razor region will be trimmed down and added fades like a breath trim.
   -- This allows any pre-existing crossfades within the area to be maintained.
   -- This is useful to turn down breaths, whilst also having fades between takes on the breath.
-      duoTrimMode = false
+      duoTrimMode = true
   -- this is off by default as you probably don't want it :n)
 
 
