@@ -1,6 +1,6 @@
 -- @description ewan's Edit Tool
 -- @author ewan
--- @version 1.1
+-- @version 1.2
 -- @about
 --   ewan's edit tool for fades and cuts
 
