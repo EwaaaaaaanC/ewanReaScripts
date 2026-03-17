@@ -1,6 +1,8 @@
 -- @description Open item copy in primary external editor with handles
 -- @author AZ (mod. ewan)
 -- @version 1.1
+-- @changelog
+--    # fixed offset issue
 -- @about
 --   #Open item copy in primary external editor with handles
 --   Modified by ewan to never let handles extend beyond item source unintentionally.
@@ -169,7 +171,7 @@ function main()
       if widePos < 0 then
         wideEnd = wideEnd - widePos
         offset = reaper.GetMediaItemTakeInfo_Value(take, 'D_STARTOFFS')
-        reaper.SetMediaItemTakeInfo_Value(take, 'D_STARTOFFS', offset + widePos)
+        reaper.SetMediaItemTakeInfo_Value(take, 'D_STARTOFFS', offset + startHandle)
       end
       reaper.BR_SetItemEdges(item, widePos, wideEnd)
       reaper.Main_OnCommandEx(40132,0,0) --Item: Open item copies in primary external editor
