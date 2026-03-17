@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="7f1a4542500fedc9077be38a1523144b9706a9fb">
+<index version="1" name="ewan's ReaScripts" commit="d38bafbbf9ab2c88d068f8d54a9e2dfe433bf14d">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items.lua" type="script" desc="Create Pooled Automation Items For Selected Items">
       <metadata>
@@ -275,15 +275,6 @@
       </version>
     </reapack>
     <reapack name="ewan - Edit Tool (Duo Mode).lua" type="script" desc="ewan's Edit Tool with Duo Mode">
-      <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
-{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
-\widowctrl\hyphauto
-
-{\pard \ql \f0 \sa180 \li0 \fi0 ewan's edit tool for fades and cuts\par}
-}
-]]></description>
-      </metadata>
       <version name="0.7" author="ewan" time="2026-03-16T08:00:26Z">
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/b4d3d1b94b3df1eeac7604a070702f2f5dfb2e2a/ewan%20-%20Editing%20Scripts/ewan%20-%20Edit%20Tool%20(Duo%20Mode).lua</source>
       </version>
