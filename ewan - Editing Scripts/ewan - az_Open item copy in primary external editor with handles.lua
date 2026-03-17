@@ -1,8 +1,8 @@
 -- @description Open item copy in primary external editor with handles
 -- @author AZ (mod. ewan)
--- @version 1.1
+-- @version 1.2
 -- @changelog
---    # fixed offset issue
+--    fixed offset issue of previous takes
 -- @about
 --   #Open item copy in primary external editor with handles
 --   Modified by ewan to never let handles extend beyond item source unintentionally.
