@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="1f250b5d10f01c49579f19261b5412d424de83b1">
+<index version="1" name="ewan's ReaScripts" commit="7400178c1d50ebf48809b59e169d69d99f304b11">
   <category name="ewan - Batch Processing Scripts">
+    <reapack name="ewan - Create Pooled Automation Items For Selected Items (No Name Prompt).lua" type="script" desc="Create Pooled Automation Items For Selected Items (No Name Prompt)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Run this script to create pooled automation items for all of your selected media items.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="ewan" time="2026-03-20T00:44:58Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/7400178c1d50ebf48809b59e169d69d99f304b11/ewan%20-%20Batch%20Processing%20Scripts/ewan%20-%20Create%20Pooled%20Automation%20Items%20For%20Selected%20Items%20(No%20Name%20Prompt).lua</source>
+      </version>
+    </reapack>
     <reapack name="ewan - Create Pooled Automation Items For Selected Items.lua" type="script" desc="Create Pooled Automation Items For Selected Items">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
