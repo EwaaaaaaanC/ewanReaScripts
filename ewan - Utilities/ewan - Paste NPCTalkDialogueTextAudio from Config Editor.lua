@@ -1,8 +1,8 @@
 -- @description Paste NPCTalkDialogueTextAudio from Config Editor
 -- @author ewan
--- @version 1.1
+-- @version 1.2
 -- @changelog
---    added colour features
+--    made item length match region length
 
 -- @about
 --   Copy the first five columns from config and paste them into reaper.
@@ -54,7 +54,7 @@ reaper.AddProjectMarker2(0, false, itemStartPos, 0, fileName, -1, 0)
 local track = reaper.GetSelectedTrack(0, 0)
 local item = reaper.AddMediaItemToTrack(track)
 reaper.SetMediaItemInfo_Value(item, "D_POSITION", pos)
-reaper.SetMediaItemInfo_Value(item, "D_LENGTH", itemEndPos-pos+spacing-2) -- Length in seconds
+reaper.SetMediaItemInfo_Value(item, "D_LENGTH", itemEndPos-pos+spacing-1) -- Length in seconds
 reaper.GetSetMediaItemInfo_String(item,"P_NOTES",textinput,true)
 
 
