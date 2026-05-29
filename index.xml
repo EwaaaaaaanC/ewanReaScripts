@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="3f0bf1f91d59e6d59df9d309d1511dd8fc1a9076">
+<index version="1" name="ewan's ReaScripts" commit="977dd9b215b5d6b9033eda473af133f4cdd45d33">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items (No Name Prompt).lua" type="script" desc="Create Pooled Automation Items For Selected Items (No Name Prompt)">
       <metadata>
@@ -432,17 +432,12 @@
       </version>
     </reapack>
     <reapack name="ewan - Move To and Loop Item Under Mouse.lua" type="script" desc="Move To and Loop Item under Mouse (respects record state)">
-      <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
-{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
-\widowctrl\hyphauto
-
-{\pard \ql \f0 \sa180 \li0 \fi0 Move To and Loop Item under Mouse. Respects the recording state of the project. Allows quick maneuvering through projects for recording and auditioning.\par}
-}
-]]></description>
-      </metadata>
       <version name="0.8" author="ewan" time="2026-05-29T04:19:27Z">
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/3f0bf1f91d59e6d59df9d309d1511dd8fc1a9076/ewan%20-%20Utilities/ewan%20-%20Move%20To%20and%20Loop%20Item%20Under%20Mouse.lua</source>
+      </version>
+      <version name="0.9" author="ewan" time="2026-05-29T04:32:48Z">
+        <changelog><![CDATA[fixed issue where item became unselected when in record mode.]]></changelog>
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/977dd9b215b5d6b9033eda473af133f4cdd45d33/ewan%20-%20Utilities/ewan%20-%20Move%20To%20and%20Loop%20Item%20Under%20Mouse.lua</source>
       </version>
     </reapack>
     <reapack name="ewan - Paste Audio from Config Editor.lua" type="script" desc="Paste Audio from Config Editor">
