@@ -1,6 +1,9 @@
 -- @description Move To and Loop Item under Mouse (respects record state)
 -- @author ewan
--- @version 0.8
+-- @version 0.9
+-- @changelog
+--    fixed issue where item became unselected when in record mode.
+
 -- @about
 --    Move To and Loop Item under Mouse. Respects the recording state of the project.
 --    Allows quick maneuvering through projects for recording and auditioning.
@@ -38,7 +41,7 @@ reaper.Main_OnCommand(1013,-1)
 reaper.SetEditCurPos( pos, false, true )
 reaper.Main_OnCommand(1013,-1)
 end
-
+reaper.SetMediaItemSelected(editItem,true)
 reaper.UpdateArrange()
 
 reaper.Undo_EndBlock("Move To and Loop Item under Mouse", -1)
