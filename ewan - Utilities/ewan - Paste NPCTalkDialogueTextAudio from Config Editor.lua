@@ -1,8 +1,8 @@
 -- @description Paste NPCTalkDialogueTextAudio from Config Editor
 -- @author ewan
--- @version 1.0
+-- @version 1.1
 -- @changelog
---    script now cancels if you cancel the pop-up
+--    added colour features
 
 -- @about
 --   Copy the first five columns from config and paste them into reaper.
@@ -18,7 +18,7 @@ dialoguePath = [[D:\SVN\4.0.0\bin\Client\Audio\Dialogue\]]
 -- The colour used is chosen at random, and is guaranteed to not be the same as the preceeding region.
 -- On the below line is where you can define your colour scheme with hex codes.
 colourscheme = {"#FFBE0B", "#FB5607", "#FF006E", "#8338EC", "#3A86FF", "#329E32"} -- There is no max no. of colours.
-
+colourFirst = false
 
 
 retval, spacing = reaper.GetUserInputs("ewan: Paste From Config (NPCTalkDialogueTextAudio)", 1, "Space between lines(s)","5")
@@ -60,6 +60,30 @@ reaper.GetSetMediaItemInfo_String(item,"P_NOTES",textinput,true)
 
 
 end
+
+
+
+if not force_color and not reaper.CF_GetCustomColor then
+  reaper.MB("SWS extension is required by this script.\nPlease download it on https://www.sws-extension.org/ or via reapack on https://www.reapack.com", "Warning", 0)
+ -- return
+end
+
+function hex2rgb(HEX_COLOR) -- sourced: https://gist.github.com/jasonbradley/4357406
+    local hex = HEX_COLOR:sub(2)
+    return tonumber('0x'..hex:sub(1,2)), tonumber('0x'..hex:sub(3,4)), tonumber('0x'..hex:sub(5,6))
+end
+
+function NativeToHex(nativeColour)
+    -- Get RGB from native COPIED
+    local R = (nativeColour >> 16) & 0xFF
+    local G = (nativeColour >> 8) & 0xFF
+    local B = nativeColour & 0xFF
+    -- Format to hex string (#RRGGBB)
+    return string.format("#%02X%02X%02X", R, G, B)
+end
+
+
+
 
 function main()
 
@@ -110,8 +134,30 @@ endPos = reaper.GetCursorPosition()
 
 --insert an item below with the text on it
 
-reaper.AddProjectMarker2(0, true, currentPos, endPos-1, id, -1, 0)
+
+-- COLOUR REGIONS TO RANDOM FOR EACH DIFFERENT NPC CONVOS.
+idNPCTag = id:match("([^_]+_[^_]+_)") 
+if lastIdNPCTag == idNPCTag then
+if colourFirst == true then
+colour = "#808080"
+end
+else
+randColour = colourscheme[math.random(1,#colourscheme-1)]
+
+  if randColour == lastColour then
+  colour = colourscheme[#colourscheme]
+  else
+  colour = randColour
+  end
+end
+R,G,B = hex2rgb(colour) -- R because r is already taken by reaper, the rest is for consistency
+lastColour = colour
+
+reaper.AddProjectMarker2(0, true, currentPos, endPos-1, id, -1, reaper.ColorToNative(R,G,B)|0x1000000)
 --insert region with id
+
+lastIdNPCTag = id:match("([^_]+_[^_]+_)")
+-- END OF COLOUR THEORY. ba dum chhh
 
 end
 
