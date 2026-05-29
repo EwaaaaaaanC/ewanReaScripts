@@ -1,6 +1,9 @@
 -- @description Paste NPCTalkDialogueTextAudio from Config Editor
 -- @author ewan
--- @version 0.9
+-- @version 1.0
+-- @changelog
+--    script now cancels if you cancel the pop-up
+
 -- @about
 --   Copy the first five columns from config and paste them into reaper.
 
@@ -11,6 +14,13 @@
 
 dialoguePath = [[D:\SVN\4.0.0\bin\Client\Audio\Dialogue\]]
 -- Paste your dialogue path above, if not the same as mine. 
+
+-- The colour used is chosen at random, and is guaranteed to not be the same as the preceeding region.
+-- On the below line is where you can define your colour scheme with hex codes.
+colourscheme = {"#FFBE0B", "#FB5607", "#FF006E", "#8338EC", "#3A86FF", "#329E32"} -- There is no max no. of colours.
+
+
+
 retval, spacing = reaper.GetUserInputs("ewan: Paste From Config (NPCTalkDialogueTextAudio)", 1, "Space between lines(s)","5")
 
 clipboard = reaper.CF_GetClipboard('')
@@ -107,26 +117,12 @@ end
 
 end
 
+
+if retval then
 reaper.Undo_BeginBlock()
 
 main()
 
 reaper.Undo_EndBlock("Paste from Config Editor",-1)
 
-
-
-
- 
-
-
-
-
-
-
-
---for i = 1, #configTable do
---pasteTarget = configTable[i]
---pasteConfigAudio(pasteTarget)
---end
-
-
+end
