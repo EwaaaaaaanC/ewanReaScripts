@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="504ad1e46fd6b453da0135dbc747ae04a6920ed8">
+<index version="1" name="ewan's ReaScripts" commit="5b8687119d13e29da8f6c4dc2edf62e5e1481825">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items (No Name Prompt).lua" type="script" desc="Create Pooled Automation Items For Selected Items (No Name Prompt)">
       <metadata>
@@ -456,6 +456,10 @@
       <version name="1.1" author="ewan" time="2026-05-29T03:39:30Z">
         <changelog><![CDATA[added colour features]]></changelog>
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/504ad1e46fd6b453da0135dbc747ae04a6920ed8/ewan%20-%20Utilities/ewan%20-%20Paste%20NPCTalkDialogueTextAudio%20from%20Config%20Editor.lua</source>
+      </version>
+      <version name="1.2" author="ewan" time="2026-05-29T03:54:26Z">
+        <changelog><![CDATA[made item length match region length]]></changelog>
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/5b8687119d13e29da8f6c4dc2edf62e5e1481825/ewan%20-%20Utilities/ewan%20-%20Paste%20NPCTalkDialogueTextAudio%20from%20Config%20Editor.lua</source>
       </version>
     </reapack>
   </category>
