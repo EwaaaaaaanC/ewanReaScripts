@@ -1,7 +1,6 @@
 -- @description Paste NPCTextAudio from Config Editor SIMPLE
 -- @author ewan
 -- @version 1
--- @changelog
 
 -- @about
 --   Copy the first four columns from config and paste them into reaper.
