@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="847d3070fdfc7426f6256b9f01b0575130cf31bb">
+<index version="1" name="ewan's ReaScripts" commit="42255d21e30235480883fb9bcf2fb0f66e27b441">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items (No Name Prompt).lua" type="script" desc="Create Pooled Automation Items For Selected Items (No Name Prompt)">
       <metadata>
@@ -41,6 +41,26 @@
       </metadata>
       <version name="0.9" author="ewan" time="2026-03-10T21:50:18Z">
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Batch%20Processing%20Scripts/ewan%20-%20Create%20Regions%20for%20Item%20Clusters%20(and%20merge%20overlapping%20regions%20in%20time%20selection).lua</source>
+      </version>
+      <version name="1" author="ewan" time="2026-06-02T21:40:11Z">
+        <changelog><![CDATA[Random colours will now NEVER match the colour of the previous region, or the colour of the current region before running the action.
+Concatenate names feature now checks for duplicate region names and doesn't concat these.]]></changelog>
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/42255d21e30235480883fb9bcf2fb0f66e27b441/ewan%20-%20Batch%20Processing%20Scripts/ewan%20-%20Create%20Regions%20for%20Item%20Clusters%20(and%20merge%20overlapping%20regions%20in%20time%20selection).lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Create Regions for Item Clusters with Name Concat (and merge overlapping regions in time selection).lua" type="script" desc="Create Regions for Item Clusters (and merge overlapping regions in time selection)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Creates Regions for Item Clusters \u8212- Sets of overlapping items. Combines names of selected regions and renames regions to this.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1" author="ewan" time="2026-06-02T21:40:11Z">
+        <changelog><![CDATA[Alternate version of script with concatNames set to 1.]]></changelog>
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/42255d21e30235480883fb9bcf2fb0f66e27b441/ewan%20-%20Batch%20Processing%20Scripts/ewan%20-%20Create%20Regions%20for%20Item%20Clusters%20with%20Name%20Concat%20(and%20merge%20overlapping%20regions%20in%20time%20selection).lua</source>
       </version>
     </reapack>
     <reapack name="ewan - Do Action For Each Cluster In Selection.lua" type="script" desc="Do Action For Each Cluster in Selection">
