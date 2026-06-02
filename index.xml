@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="42255d21e30235480883fb9bcf2fb0f66e27b441">
+<index version="1" name="ewan's ReaScripts" commit="6a76057f36289a1b685a3f124cf52772e0ae448c">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items (No Name Prompt).lua" type="script" desc="Create Pooled Automation Items For Selected Items (No Name Prompt)">
       <metadata>
@@ -499,6 +499,11 @@ Concatenate names feature now checks for duplicate region names and doesn't conc
       <version name="1.3" author="ewan" time="2026-06-02T05:35:17Z">
         <changelog><![CDATA[Added filtering functionality and relevant GUI.]]></changelog>
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/847d3070fdfc7426f6256b9f01b0575130cf31bb/ewan%20-%20Utilities/ewan%20-%20Paste%20NPCTalkDialogueTextAudio%20from%20Config%20Editor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Paste NPCTextAudio from Config Editor.lua" type="script" desc="Paste NPCTextAudio from Config Editor SIMPLE">
+      <version name="1" author="ewan" time="2026-06-02T22:35:02Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/6a76057f36289a1b685a3f124cf52772e0ae448c/ewan%20-%20Utilities/ewan%20-%20Paste%20NPCTextAudio%20from%20Config%20Editor.lua</source>
       </version>
     </reapack>
   </category>
