@@ -2,10 +2,9 @@
 -- @author ewan
 -- @version 1
 -- @changelog
---    Random colours will now NEVER match the colour of the previous region, or the colour of the current region before running the action.
---    Concatenate names feature now checks for duplicate region names and doesn't concat these.
+--    Alternate version of script with concatNames set to 1.
 -- @about
---   Creates Regions for Item Clusters — Sets of overlapping items.
+--   Creates Regions for Item Clusters — Sets of overlapping items. Combines names of selected regions and renames regions to this.
 
 -- ewan says HELLO!
 
@@ -29,7 +28,7 @@ shrinkRegions = 1
 -- Optional setting: preserve and concatenate names.
 -- If the below variable is set to 1, the script will combine the names of existing regions and set the new regions to this name.
 -- This is handy to preserve existing region names. 
-concatNames = 0
+concatNames = 1
 
 
 --DO NOT TOUCH anything below here.
