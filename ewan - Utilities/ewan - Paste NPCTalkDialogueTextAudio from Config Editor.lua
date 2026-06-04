@@ -1,8 +1,8 @@
 -- @description Paste NPCTalkDialogueTextAudio from Config Editor
 -- @author ewan
--- @version 1.7
+-- @version 1.8
 -- @changelog
---    Bug fix: added templar.
+--    Improved GUI naming and layout
 
 -- @about
 --   Copy the first five columns from config and paste them into reaper.
@@ -113,7 +113,7 @@ if missing_lib then return 0 end
 
 
 
-GUI.name = "Config Import Gui"
+GUI.name = "Import"
 GUI.x, GUI.y, GUI.w, GUI.h = 0, 0, 128, 540
 GUI.anchor, GUI.corner = "mouse", "C"
 
@@ -121,7 +121,7 @@ GUI.anchor, GUI.corner = "mouse", "C"
 GUI.New("Import ALL", "Button", {
     z = 11,
     x = 16,
-    y = 416,
+    y = 430,
     w = 90,
     h = 45,
     caption = "Import ALL",
@@ -135,7 +135,7 @@ GUI.New("Import ALL", "Button", {
 GUI.New("Import Selected", "Button", {
     z = 11,
     x = 16,
-    y = 356,
+    y = 375,
     w = 90,
     h = 45,
     caption = "Import Selected",
@@ -149,10 +149,10 @@ GUI.New("Import Selected", "Button", {
 GUI.New("Who to Import", "Checklist", {
     z = 12,
     x = 16,
-    y = 16,
+    y = 26,
     w = 96,
-    h = 330,
-    caption = "Who To Import?",
+    h = 340,
+    caption = "NPCTalkDialogue\nTextAudio",
     optarray = {"NPCs", "Warrior", "Witch", "Sorceress", "Ranger", "Huntress", "Mercenary", "Monk", "Druid", "Mercenary", "Shadow", "Templar", "Marauder"},
     dir = "v",
     pad = 4,
@@ -171,7 +171,7 @@ GUI.New("Who to Import", "Checklist", {
 GUI.New("Spacing(s):", "Textbox", {
     z = 11,
     x = 75,
-    y = 480,
+    y = 485,
     w = 40,
     h = 20,
     caption = "Spacing(s)",
