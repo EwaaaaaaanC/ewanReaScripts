@@ -1,8 +1,8 @@
 -- @description Paste NPCTalkDialogueTextAudio from Config Editor SIMPLE
 -- @author ewan
--- @version 1.2
+-- @version 1.3
 -- @changelog
---    made item length match region length
+--    Now handles blank cells correctly.
 
 -- @about
 --   Non-UI version. Copy the first five columns from config and paste them into reaper.
@@ -27,7 +27,7 @@ clipboard = reaper.CF_GetClipboard('')
 
 configTable = {}
 -- Iterate through each line and insert it into the table
-for line in clipboard:gmatch("[^\r\n\t]+") do
+for line in clipboard:gmatch("[^\r\n\t]*") do
     table.insert(configTable, line)
 end
 
@@ -38,6 +38,11 @@ return fileNameOnly
 end
 
 function pasteConfigAudio (path,textinput)
+
+if textinput == nil or textinput =="" then
+textinput = ""
+end
+
 local pos = reaper.GetCursorPosition()
 local fullpath = dialoguePath..path
 itemStartPos = reaper.GetCursorPosition()
@@ -93,15 +98,19 @@ text = ""
 assetList = {}
 textList = {}
 
-stepCount = #configTable/4
+stepCount = (#configTable+1)/6
 
 for i = 1, stepCount do
   assetList = {}
   textList = {}
-  id = configTable[i*4-3]
-  speaker = configTable[i*4-2]
-  text = configTable[i*4-1]
-  assets = configTable[i*4]
+  id = configTable[i*6-5]
+    if (configTable[i*6-4]=="") then
+              speaker = configTable[i*6-3]
+            else
+              speaker = configTable[i*6-4]
+    end
+  text = configTable[i*6-2]
+  assets = configTable[i*6-1]
 --above gets data for each step.
 
 reaper.SelectAllMediaItems(0,false)
@@ -121,11 +130,15 @@ end
 
 currentPos = reaper.GetCursorPosition()
 
-for i = 1, #assetList do
-pasteAsset = assetList[i]
-pasteText = textList[i]
-pasteConfigAudio(pasteAsset,pasteText)
-end
+ if #assetList == 0 then
+    pasteConfigAudio("NullFile/Null_3s.ogg",text)
+   else
+     for i = 1, #assetList do
+     pasteAsset = assetList[i]
+     pasteText = textList[i]
+     pasteConfigAudio(pasteAsset,pasteText)
+    end
+   end
 --above pastes assets in a row.
 
 endPos = reaper.GetCursorPosition()

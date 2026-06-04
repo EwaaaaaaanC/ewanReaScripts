@@ -1,6 +1,8 @@
 -- @description Paste NPCTextAudio from Config Editor SIMPLE
 -- @author ewan
--- @version 1
+-- @version 1.2
+-- @changelog
+--    Now handles blank cells correctly.
 
 -- @about
 --   Copy the first four columns from config and paste them into reaper.
@@ -25,7 +27,7 @@ clipboard = reaper.CF_GetClipboard('')
 
 configTable = {}
 -- Iterate through each line and insert it into the table
-for line in clipboard:gmatch("[^\r\n\t]+") do
+for line in clipboard:gmatch("[^\r\n\t]*") do
     table.insert(configTable, line)
 end
 
@@ -36,6 +38,11 @@ return fileNameOnly
 end
 
 function pasteConfigAudio (path,textinput)
+
+if textinput == nil or textinput =="" then
+textinput = ""
+end
+
 local pos = reaper.GetCursorPosition()
 local fullpath = dialoguePath..path
 itemStartPos = reaper.GetCursorPosition()
@@ -48,11 +55,14 @@ local fileName = reduceToFileNameOnly(path)
 reaper.AddProjectMarker2(0, false, itemStartPos, 0, fileName, -1, 0)
 --adds a marker with filename for rendering.
 
+
 local track = reaper.GetSelectedTrack(0, 0)
 local item = reaper.AddMediaItemToTrack(track)
 reaper.SetMediaItemInfo_Value(item, "D_POSITION", pos)
 reaper.SetMediaItemInfo_Value(item, "D_LENGTH", itemEndPos-pos+spacing-1) -- Length in seconds
 reaper.GetSetMediaItemInfo_String(item,"P_NOTES",textinput,true)
+
+
 
 end
 
@@ -88,15 +98,15 @@ text = ""
 assetList = {}
 textList = {}
 
-stepCount = #configTable/4
+stepCount = (#configTable+1)/5
 
 for i = 1, stepCount do
   assetList = {}
   textList = {}
-  id = configTable[i*4-3]
-  speaker = configTable[i*4-2]
-  text = configTable[i*4-1]
-  assets = configTable[i*4]
+  id = configTable[i*5-4]
+  speaker = configTable[i*5-3]
+  text = configTable[i*5-2]
+  assets = configTable[i*5-1]
 --above gets data for each step.
 
 reaper.SelectAllMediaItems(0,false)
@@ -116,24 +126,47 @@ end
 
 currentPos = reaper.GetCursorPosition()
 
-for i = 1, #assetList do
-pasteAsset = assetList[i]
-pasteText = textList[i]
-pasteConfigAudio(pasteAsset,pasteText)
-end
+ if #assetList == 0 then
+    pasteConfigAudio("NullFile/Null_3s.ogg",text)
+   else
+     for i = 1, #assetList do
+     pasteAsset = assetList[i]
+     pasteText = textList[i]
+     pasteConfigAudio(pasteAsset,pasteText)
+    end
+   end
 --above pastes assets in a row.
 
 endPos = reaper.GetCursorPosition()
 --reaper.SetEditCurPos(endPos+30,true,false)
 --above moves the cursor forwards before next assets are pasted.
 
--- Colour 
-colour = "#d1f542"
+--insert an item below with the text on it
+
+
+-- COLOUR REGIONS TO RANDOM FOR EACH DIFFERENT NPC CONVOS.
+idNPCTag = id:match("([^_]+_[^_]+_)") 
+if lastIdNPCTag == idNPCTag then
+if colourFirst == true then
+colour = "#808080"
+end
+else
+randColour = colourscheme[math.random(1,#colourscheme-1)]
+
+  if randColour == lastColour then
+  colour = colourscheme[#colourscheme]
+  else
+  colour = randColour
+  end
+end
 R,G,B = hex2rgb(colour) -- R because r is already taken by reaper, the rest is for consistency
+lastColour = colour
 
 reaper.AddProjectMarker2(0, true, currentPos, endPos-1, id, -1, reaper.ColorToNative(R,G,B)|0x1000000)
 --insert region with id
 
+lastIdNPCTag = id:match("([^_]+_[^_]+_)")
+-- END OF COLOUR THEORY. ba dum chhh
 
 end
 
@@ -145,6 +178,6 @@ reaper.Undo_BeginBlock()
 
 main()
 
-reaper.Undo_EndBlock("Paste from Config Editor",-1)
+reaper.Undo_EndBlock("Paste from Config Editor (NPCTextAudio)",-1)
 
 end
