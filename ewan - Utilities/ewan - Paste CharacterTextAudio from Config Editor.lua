@@ -1,6 +1,8 @@
 -- @description paste CharacterTextAudio from Config Editor
 -- @author ewan
--- @version 0.8
+-- @version 1
+-- @changelog
+--    GUI re-scaled to fit better.
 
 -- @about
 --   Copy the first three columns from CharacterTextAudio and paste them into reaper.
@@ -136,14 +138,14 @@ if missing_lib then return 0 end
 
 
 GUI.name = "Config Import Gui"
-GUI.x, GUI.y, GUI.w, GUI.h = 0, 0, 128, 540
+GUI.x, GUI.y, GUI.w, GUI.h = 0, 0, 128, 495
 GUI.anchor, GUI.corner = "mouse", "C"
 
 -- Import ALL button
 GUI.New("Import ALL", "Button", {
     z = 11,
     x = 16,
-    y = 416,
+    y = 385,
     w = 90,
     h = 45,
     caption = "Import ALL",
@@ -157,7 +159,7 @@ GUI.New("Import ALL", "Button", {
 GUI.New("Import Selected", "Button", {
     z = 11,
     x = 16,
-    y = 356,
+    y = 331,
     w = 90,
     h = 45,
     caption = "Import Selected",
@@ -173,7 +175,7 @@ GUI.New("Who to Import", "Checklist", {
     x = 16,
     y = 16,
     w = 96,
-    h = 330,
+    h = 305,
     caption = "Who To Import?",
     optarray = {"Warrior", "Witch", "Sorceress", "Ranger", "Huntress", "Mercenary", "Monk", "Druid", "Mercenary", "Shadow", "Templar", "Marauder"},
     dir = "v",
@@ -193,7 +195,7 @@ GUI.New("Who to Import", "Checklist", {
 GUI.New("Spacing(s):", "Textbox", {
     z = 11,
     x = 75,
-    y = 480,
+    y = 444,
     w = 40,
     h = 20,
     caption = "Spacing(s)",
@@ -401,5 +403,4 @@ end
         end
 end
 end
-
 
