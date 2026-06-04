@@ -1,8 +1,8 @@
 -- @description Paste NPCTextAudio from Config Editor SIMPLE
 -- @author ewan
--- @version 1.2
+-- @version 1.3
 -- @changelog
---    Now handles blank cells correctly.
+--    Now handles blank text and audio cells correctly.
 
 -- @about
 --   Copy the first four columns from config and paste them into reaper.
@@ -101,40 +101,23 @@ textList = {}
 stepCount = (#configTable+1)/5
 
 for i = 1, stepCount do
-  assetList = {}
-  textList = {}
   id = configTable[i*5-4]
   speaker = configTable[i*5-3]
   text = configTable[i*5-2]
-  assets = configTable[i*5-1]
+  asset = configTable[i*5-1]
 --above gets data for each step.
 
 reaper.SelectAllMediaItems(0,false)
 --deselectallitems
 
-assetsFormatted = string.gsub(assets, ", ", "\n")
-for line in assetsFormatted:gmatch("[^\r\n]+") do
-    table.insert(assetList, line)
-end
--- above four lines formats assets for inserting.
-
-textSplit = string.gsub(text, "<continue>", "\n")
-for line in textSplit:gmatch("[^\r\n]+") do
-    table.insert(textList, line)
-end
--- above four lines formats text for inserting.
-
 currentPos = reaper.GetCursorPosition()
 
- if #assetList == 0 then
+ if asset == nil or asset == "" then
     pasteConfigAudio("NullFile/Null_3s.ogg",text)
    else
-     for i = 1, #assetList do
-     pasteAsset = assetList[i]
-     pasteText = textList[i]
-     pasteConfigAudio(pasteAsset,pasteText)
-    end
-   end
+    pasteConfigAudio(asset,text)
+ end
+
 --above pastes assets in a row.
 
 endPos = reaper.GetCursorPosition()
