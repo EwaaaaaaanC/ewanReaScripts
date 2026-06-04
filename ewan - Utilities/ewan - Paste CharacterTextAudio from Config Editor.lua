@@ -1,8 +1,9 @@
 -- @description paste CharacterTextAudio from Config Editor
 -- @author ewan
--- @version 1
+-- @version 1.1
 -- @changelog
---    GUI re-scaled to fit better.
+--    Changed colouring system to consider beggining of string before THIRD underscore.
+--    Gui Naming improved.
 
 -- @about
 --   Copy the first three columns from CharacterTextAudio and paste them into reaper.
@@ -137,14 +138,14 @@ if missing_lib then return 0 end
 
 
 
-GUI.name = "Config Import Gui"
-GUI.x, GUI.y, GUI.w, GUI.h = 0, 0, 128, 495
+GUI.name = "Import"
+GUI.x, GUI.y, GUI.w, GUI.h = 0, 0, 140, 495
 GUI.anchor, GUI.corner = "mouse", "C"
 
 -- Import ALL button
 GUI.New("Import ALL", "Button", {
     z = 11,
-    x = 16,
+    x = 24,
     y = 385,
     w = 90,
     h = 45,
@@ -158,7 +159,7 @@ GUI.New("Import ALL", "Button", {
 -- Import Selected Button
 GUI.New("Import Selected", "Button", {
     z = 11,
-    x = 16,
+    x = 24,
     y = 331,
     w = 90,
     h = 45,
@@ -172,11 +173,11 @@ GUI.New("Import Selected", "Button", {
 -- Checklist of Who to Import
 GUI.New("Who to Import", "Checklist", {
     z = 12,
-    x = 16,
+    x = 22,
     y = 16,
     w = 96,
     h = 305,
-    caption = "Who To Import?",
+    caption = "CharacterTextAudio",
     optarray = {"Warrior", "Witch", "Sorceress", "Ranger", "Huntress", "Mercenary", "Monk", "Druid", "Mercenary", "Shadow", "Templar", "Marauder"},
     dir = "v",
     pad = 4,
@@ -194,7 +195,7 @@ GUI.New("Who to Import", "Checklist", {
 -- Spacing Input Field.
 GUI.New("Spacing(s):", "Textbox", {
     z = 11,
-    x = 75,
+    x = 81,
     y = 444,
     w = 40,
     h = 20,
@@ -315,6 +316,7 @@ for i = 1, #whoToImport do
 if speaker == whoToImport[i] then
 insertStep = true
 end
+
 if string.sub(speaker, 1, 19) ~= "Metadata/Characters" and whoToImport[1]== "NPCs" then
 insertStep = true
 end
@@ -367,7 +369,7 @@ end
             -- gets position after the step has been inserted.
             
             -- COLOUR REGIONS TO RANDOM FOR EACH DIFFERENT NPC CONVOS.
-            idNPCTag = id:match("([^_]+_[^_]+_)") 
+            idNPCTag = id:match("([^_]+_[^_]+_[^_]+_)") 
             if lastIdNPCTag == idNPCTag then
             if colourFirst == true then
             colour = "#808080"
@@ -388,8 +390,8 @@ end
             -- this allows colour to change when a new convo starts.
            
              _, underscorecount = string.gsub(id, "_", "_")
-            if underscorecount >= 2 or underscorecount == nil then
-            lastIdNPCTag = id:match("([^_]+_[^_]+_)")
+            if underscorecount >= 3 or underscorecount ~= nil then
+            lastIdNPCTag = id:match("([^_]+_[^_]+_[^_]+_)")
             else
             lastIdNPCTag = "convoIDnotRelevant"
             end
