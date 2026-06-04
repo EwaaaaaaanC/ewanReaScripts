@@ -1,8 +1,8 @@
 -- @description Paste NPCTalkDialogueTextAudio from Config Editor SIMPLE
 -- @author ewan
--- @version 1.4
+-- @version 1.5
 -- @changelog
---    Bug fix: handles ids with no underscores correctly.
+--    Improved handling of empty cells.
 
 -- @about
 --   Non-UI version. Copy the first five columns from config and paste them into reaper.
@@ -131,8 +131,15 @@ end
 currentPos = reaper.GetCursorPosition()
 
  if #assetList == 0 then
-    pasteConfigAudio("NullFile/Null_3s.ogg",text)
-   else
+   if#textList>0 then
+     for i =1, #textList do
+     pasteText = textList[i]
+   pasteConfigAudio("NullFile/Null_3s.ogg",pasteText)
+     end
+     else
+   pasteConfigAudio("NullFile/Null_3s.ogg","")
+   end
+ else
      for i = 1, #assetList do
      pasteAsset = assetList[i]
      pasteText = textList[i]
