@@ -1,8 +1,8 @@
 -- @description Paste NPCTalkDialogueTextAudio from Config Editor
 -- @author ewan
--- @version 1.5
+-- @version 1.6
 -- @changelog
---    Improved handling of empty cells.
+--    Now cancels import if the text contains a fatal linebreak.
 
 -- @about
 --   Copy the first five columns from config and paste them into reaper.
@@ -298,6 +298,11 @@ insertStep = true
 end
 end
 
+--the below cancels the import if a line break (or something else) misaligns cells.
+if (id == "") or (string.sub(id, 1, 4) == "4.0/") then
+reaper.MB("Likely, there is a line break somewhere within the text of the final step imported: \n"..lastID.."\n :( You should be fine to continue importing from where this was cancelled.", "Import ended early!", 0)
+return
+end
 
      if insertStep == true then     
         
@@ -366,6 +371,7 @@ end
             else
             lastIdNPCTag = "convoIDnotRelevant"
             end
+            lastID = id
             -- END OF COLOUR STUFF
             
             reaper.AddProjectMarker2(0, true, currentPos, endPos-1, id, -1, reaper.ColorToNative(R,G,B)|0x1000000)
