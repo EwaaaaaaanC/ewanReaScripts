@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="4f8f32dc35533a7298f5db384919d23fbf961796">
+<index version="1" name="ewan's ReaScripts" commit="4adb0501b875c52e8a8a2d545d3739d71d48596b">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items (No Name Prompt).lua" type="script" desc="Create Pooled Automation Items For Selected Items (No Name Prompt)">
       <metadata>
@@ -516,6 +516,10 @@ Concatenate names feature now checks for duplicate region names and doesn't conc
       <version name="1.2" author="ewan" time="2026-06-04T01:49:58Z">
         <changelog><![CDATA[Now handles blank cells correctly.]]></changelog>
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/4f8f32dc35533a7298f5db384919d23fbf961796/ewan%20-%20Utilities/ewan%20-%20Paste%20NPCTextAudio%20from%20Config%20Editor.lua</source>
+      </version>
+      <version name="1.3" author="ewan" time="2026-06-04T02:07:57Z">
+        <changelog><![CDATA[Now handles blank text and audio cells correctly.]]></changelog>
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/4adb0501b875c52e8a8a2d545d3739d71d48596b/ewan%20-%20Utilities/ewan%20-%20Paste%20NPCTextAudio%20from%20Config%20Editor.lua</source>
       </version>
     </reapack>
   </category>
