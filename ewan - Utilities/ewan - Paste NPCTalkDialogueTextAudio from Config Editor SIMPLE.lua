@@ -1,8 +1,8 @@
 -- @description Paste NPCTalkDialogueTextAudio from Config Editor SIMPLE
 -- @author ewan
--- @version 1.5
+-- @version 1.7
 -- @changelog
---    Improved handling of empty cells.
+--    Now has error message and exits when text field line breaks mess up the import.
 
 -- @about
 --   Non-UI version. Copy the first five columns from config and paste them into reaper.
@@ -113,6 +113,13 @@ for i = 1, stepCount do
   assets = configTable[i*6-1]
 --above gets data for each step.
 
+--the below cancels the import if a line break (or something else) misaligns cells.
+if (id == "") or (string.sub(id, 1, 4) == "4.0/") then
+reaper.MB("Likely, there is a line break somewhere within the text of the final step imported: \n"..lastID.."\n :( You should be fine to continue importing from where this was cancelled.", "Import ended early!", 0)
+return
+end
+
+
 reaper.SelectAllMediaItems(0,false)
 --deselectallitems
 
@@ -183,6 +190,7 @@ _, underscorecount = string.gsub(id, "_", "_")
           lastIdNPCTag = "convoIDnotRelevant"
           end
 -- END OF COLOUR THEORY. ba dum chhh
+lastID = id
 
 end
 

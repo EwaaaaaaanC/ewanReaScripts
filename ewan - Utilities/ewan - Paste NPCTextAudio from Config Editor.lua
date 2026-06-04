@@ -167,6 +167,6 @@ reaper.Undo_BeginBlock()
 
 main()
 
-reaper.Undo_EndBlock("Paste from Config Editor (NPCTextAudio",-1)
+reaper.Undo_EndBlock("Paste from Config Editor (NPCTextAudio)",-1)
 
 end
