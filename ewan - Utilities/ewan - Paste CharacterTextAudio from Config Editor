@@ -1,14 +1,12 @@
--- @description Paste NPCTalkDialogueTextAudio from Config Editor
+-- @description paste CharacterTextAudio from Config Editor
 -- @author ewan
--- @version 1.7
--- @changelog
---    Bug fix: added templar.
+-- @version 0.8
 
 -- @about
---   Copy the first five columns from config and paste them into reaper.
+--   Copy the first three columns from CharacterTextAudio and paste them into reaper.
 
 --HOW TO:
--- COPY the first FIVE columns in config for the steps you want to paste.
+-- COPY the first three columns in config for the steps you want to paste.
 -- Then, run this action at the point in the reaper session you wish to insert them.
 -- Enter the number of seconds you want to separate each line.
 
@@ -25,11 +23,14 @@ reaper.Undo_BeginBlock()
 
 inputArray = {"Marauder","Witch"}
 -- the below table is used to convert plain text class names to short names.
-conversionTable = {"NPCs","Marauder", "Witch", "Ranger", "Duelist", "Shadow", "Templar", "Warrior", "Sorceress", "Huntress", "Mercenary", "Monk", "Druid",      
+conversionTable = {"NPCs","Warrior", "Witch", "Ranger", "Duelist", "Shadow", "Templar", "Warrior", "Sorceress", "Huntress", "Mercenary", "Monk", "Druid",      
 "NPCs","Metadata/Characters/Str/StrFour", "Metadata/Characters/Int/IntFour", "Metadata/Characters/Dex/DexFour", "Metadata/Characters/StrDex/StrDexFour", "Metadata/Characters/DexInt/DexIntFour", "Metadata/Characters/StrInt/StrIntFour", "Metadata/Characters/Str/StrFourb", "Metadata/Characters/Int/IntFourb", "Metadata/Characters/Dex/DexFourb", "Metadata/Characters/StrDex/StrDexFourb", "Metadata/Characters/DexInt/DexIntFourb", "Metadata/Characters/StrInt/StrIntFourb" }
 
+conversionTableShortToMeta = {"Str4", "Int4", "Dex4", "StrDex4", "DexInt4", "StrInt4", "Str4b", "Int4b", "Dex4b", "StrDex4b", "DexInt4b", "StrInt4b",      
+"Metadata/Characters/Str/StrFour", "Metadata/Characters/Int/IntFour", "Metadata/Characters/Dex/DexFour", "Metadata/Characters/StrDex/StrDexFour", "Metadata/Characters/DexInt/DexIntFour", "Metadata/Characters/StrInt/StrIntFour", "Metadata/Characters/Str/StrFourb", "Metadata/Characters/Int/IntFourb", "Metadata/Characters/Dex/DexFourb", "Metadata/Characters/StrDex/StrDexFourb", "Metadata/Characters/DexInt/DexIntFourb", "Metadata/Characters/StrInt/StrIntFourb" }
+
 -- order of the list in the GUI.
-checklistOrder = {"NPCs", "Warrior", "Witch", "Sorceress", "Ranger", "Huntress", "Mercenary", "Monk", "Druid", "Mercenary", "Shadow", "Templar", "Marauder"}
+checklistOrder = {"Warrior", "Witch", "Sorceress", "Ranger", "Huntress", "Mercenary", "Monk", "Druid", "Mercenary", "Shadow", "Templar", "Marauder"}
 
 -- this table gets populated on button press to a list of who can be imported.
 whoToImport = {}
@@ -59,6 +60,27 @@ local result
 return result
 end
 
+function convertToMetadata (input)
+local result
+        for n = 1, 12 do
+          if input == conversionTableShortToMeta[n] then
+          result = conversionTableShortToMeta[n+12]
+          end
+        end
+        
+        if result == nil then
+        result = convertNameToShortName(input)
+        end
+        
+        if result == nil then
+        result = "NPCs"
+        end
+        -- this final block allows things to pass on import all if no class tags.
+        
+return result
+end
+
+
 -- this is the function called when the 'Import ALL' button is pressed.
 function runAll()
 whoToImport = {"NPCs","Metadata/Characters/Str/StrFour", "Metadata/Characters/Int/IntFour", "Metadata/Characters/Dex/DexFour", "Metadata/Characters/StrDex/StrDexFour", "Metadata/Characters/DexInt/DexIntFour", "Metadata/Characters/StrInt/StrIntFour", "Metadata/Characters/Str/StrFourb", "Metadata/Characters/Int/IntFourb", "Metadata/Characters/Dex/DexFourb", "Metadata/Characters/StrDex/StrDexFourb", "Metadata/Characters/DexInt/DexIntFourb", "Metadata/Characters/StrInt/StrIntFourb"}
@@ -66,7 +88,7 @@ createConfigTableFromClipboard()
 spacing = GUI.Val("Spacing(s):")
 runFunction()
 
-reaper.Undo_EndBlock("Paste ALL from Config Editor (NPCTalkDialogueTextAudio)",-1)
+reaper.Undo_EndBlock("Paste ALL from Config Editor (CharacterTextAudio)",-1)
 end
 
 
@@ -77,7 +99,7 @@ whoToImport = {}
 
 -- the below block takes the GUI checklist and populates the whoToImport table only with enabled values.
 checklistArray = GUI.Val("Who to Import")
-  for i = 1, 13 do
+  for i = 1, 12 do
       if checklistArray[i] == true then
         table.insert(whoToImport,convertNameToShortName(checklistOrder[i]))
       end
@@ -87,7 +109,7 @@ createConfigTableFromClipboard()
 spacing = GUI.Val("Spacing(s):")
 runFunction()
 
-reaper.Undo_EndBlock("Paste from Config Editor, Filtered (NPCTalkDialogueTextAudio)",-1)
+reaper.Undo_EndBlock("Paste from Config Editor, Filtered (CharacterTextAudio)",-1)
 end
 
 
@@ -153,7 +175,7 @@ GUI.New("Who to Import", "Checklist", {
     w = 96,
     h = 330,
     caption = "Who To Import?",
-    optarray = {"NPCs", "Warrior", "Witch", "Sorceress", "Ranger", "Huntress", "Mercenary", "Monk", "Druid", "Mercenary", "Shadow", "Templar", "Marauder"},
+    optarray = {"Warrior", "Witch", "Sorceress", "Ranger", "Huntress", "Mercenary", "Monk", "Druid", "Mercenary", "Shadow", "Templar", "Marauder"},
     dir = "v",
     pad = 4,
     font_a = 2,
@@ -273,19 +295,17 @@ text = ""
 assetList = {}
 textList = {}
 
-stepCount = (#configTable+1)/6
+stepCount = (#configTable+1)/4
 
 for i = 1, stepCount do
   assetList = {}
   textList = {}
-  id = configTable[i*6-5]
-    if (configTable[i*6-4]=="") then
-              speaker = configTable[i*6-3]
-            else
-              speaker = configTable[i*6-4]
-    end
-  text = configTable[i*6-2]
-  assets = configTable[i*6-1]
+  id = configTable[i*4-3]
+  speakerShort = id:match("([^_]+)")
+  speaker = convertToMetadata(speakerShort)
+  --speaker = convertNameToShortName(speakerPlainText)
+  text = configTable[i*4-1]
+  assets = configTable[i*4-2]
 --above gets data for each step.
 
 insertStep = false
