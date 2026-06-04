@@ -1,14 +1,15 @@
 -- @description Paste NPCTextAudio from Config Editor SIMPLE
 -- @author ewan
--- @version 1.3
+-- @version 1.44
 -- @changelog
---    Now handles blank text and audio cells correctly.
+--    Bug fix: handles colours and missing columns correctly.
+--    Fixed descriptions to reflect proper use.
 
 -- @about
---   Copy the first four columns from config and paste them into reaper.
+--   Non-UI version. Copy the first four columns from config and paste them into reaper.
 
 --HOW TO:
--- COPY the first FIVE columns in config for the steps you want to paste.
+-- COPY the first FOUR columns in config for the steps you want to paste.
 -- Then, run this action at the point in the reaper session you wish to insert them.
 -- Enter the number of seconds you want to separate each line.
 
@@ -101,23 +102,40 @@ textList = {}
 stepCount = (#configTable+1)/5
 
 for i = 1, stepCount do
+  assetList = {}
+  textList = {}
   id = configTable[i*5-4]
   speaker = configTable[i*5-3]
   text = configTable[i*5-2]
-  asset = configTable[i*5-1]
+  assets = configTable[i*5-1]
 --above gets data for each step.
 
 reaper.SelectAllMediaItems(0,false)
 --deselectallitems
 
+assetsFormatted = string.gsub(assets, ", ", "\n")
+for line in assetsFormatted:gmatch("[^\r\n]+") do
+    table.insert(assetList, line)
+end
+-- above four lines formats assets for inserting.
+
+textSplit = string.gsub(text, "<continue>", "\n")
+for line in textSplit:gmatch("[^\r\n]+") do
+    table.insert(textList, line)
+end
+-- above four lines formats text for inserting.
+
 currentPos = reaper.GetCursorPosition()
 
- if asset == nil or asset == "" then
+ if #assetList == 0 then
     pasteConfigAudio("NullFile/Null_3s.ogg",text)
    else
-    pasteConfigAudio(asset,text)
- end
-
+     for i = 1, #assetList do
+     pasteAsset = assetList[i]
+     pasteText = textList[i]
+     pasteConfigAudio(pasteAsset,pasteText)
+    end
+   end
 --above pastes assets in a row.
 
 endPos = reaper.GetCursorPosition()
@@ -126,29 +144,17 @@ endPos = reaper.GetCursorPosition()
 
 --insert an item below with the text on it
 
-
--- COLOUR REGIONS TO RANDOM FOR EACH DIFFERENT NPC CONVOS.
-idNPCTag = id:match("([^_]+_[^_]+_)") 
-if lastIdNPCTag == idNPCTag then
-if colourFirst == true then
-colour = "#808080"
-end
-else
-randColour = colourscheme[math.random(1,#colourscheme-1)]
-
-  if randColour == lastColour then
-  colour = colourscheme[#colourscheme]
-  else
-  colour = randColour
-  end
-end
-R,G,B = hex2rgb(colour) -- R because r is already taken by reaper, the rest is for consistency
-lastColour = colour
+R,G,B = hex2rgb("#00f5c0") -- R because r is already taken by reaper, the rest is for consistency
 
 reaper.AddProjectMarker2(0, true, currentPos, endPos-1, id, -1, reaper.ColorToNative(R,G,B)|0x1000000)
 --insert region with id
 
-lastIdNPCTag = id:match("([^_]+_[^_]+_)")
+_, underscorecount = string.gsub(id, "_", "_")
+          if underscorecount >= 2 or underscorecount == nil then
+          lastIdNPCTag = id:match("([^_]+_[^_]+_)")
+          else
+          lastIdNPCTag = "convoIDnotRelevant"
+          end
 -- END OF COLOUR THEORY. ba dum chhh
 
 end
@@ -161,6 +167,6 @@ reaper.Undo_BeginBlock()
 
 main()
 
-reaper.Undo_EndBlock("Paste from Config Editor (NPCTextAudio)",-1)
+reaper.Undo_EndBlock("Paste from Config Editor (NPCTextAudio",-1)
 
 end
