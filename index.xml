@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="1f5b6c9ac634019b69f4881fac97b8ab0b8587ee">
+<index version="1" name="ewan's ReaScripts" commit="d84052edd1995b805b585159c2fb63fe9f4e60db">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items (No Name Prompt).lua" type="script" desc="Create Pooled Automation Items For Selected Items (No Name Prompt)">
       <metadata>
@@ -544,6 +544,10 @@ Gui Naming improved.]]></changelog>
       <version name="1.7" author="ewan" time="2026-06-04T22:42:40Z">
         <changelog><![CDATA[Bug fix: added templar.]]></changelog>
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/099a1f177d3540610c92d987fde463d853a84edc/ewan%20-%20Utilities/ewan%20-%20Paste%20NPCTalkDialogueTextAudio%20from%20Config%20Editor.lua</source>
+      </version>
+      <version name="1.8" author="ewan" time="2026-06-04T23:36:21Z">
+        <changelog><![CDATA[Improved GUI naming and layout]]></changelog>
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/d84052edd1995b805b585159c2fb63fe9f4e60db/ewan%20-%20Utilities/ewan%20-%20Paste%20NPCTalkDialogueTextAudio%20from%20Config%20Editor.lua</source>
       </version>
     </reapack>
     <reapack name="ewan - Paste NPCTextAudio from Config Editor.lua" type="script" desc="Paste NPCTextAudio from Config Editor SIMPLE">
