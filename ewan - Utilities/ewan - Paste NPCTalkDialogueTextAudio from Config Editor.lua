@@ -1,8 +1,8 @@
 -- @description Paste NPCTalkDialogueTextAudio from Config Editor
 -- @author ewan
--- @version 1.4
+-- @version 1.44
 -- @changelog
---    Now handles blank cells better.
+--    Bug fix: handles ids with no underscores correctly.
 
 -- @about
 --   Copy the first five columns from config and paste them into reaper.
@@ -352,7 +352,13 @@ end
             
             -- saves the convo id, NOT step ID, to compare on the next inserted step.
             -- this allows colour to change when a new convo starts.
+           
+             _, underscorecount = string.gsub(id, "_", "_")
+            if underscorecount >= 2 or underscorecount == nil then
             lastIdNPCTag = id:match("([^_]+_[^_]+_)")
+            else
+            lastIdNPCTag = "convoIDnotRelevant"
+            end
             -- END OF COLOUR STUFF
             
             reaper.AddProjectMarker2(0, true, currentPos, endPos-1, id, -1, reaper.ColorToNative(R,G,B)|0x1000000)
@@ -362,7 +368,6 @@ end
         end
 end
 end
-
 
 
 

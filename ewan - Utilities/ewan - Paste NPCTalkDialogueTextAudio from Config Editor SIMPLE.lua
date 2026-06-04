@@ -1,8 +1,8 @@
 -- @description Paste NPCTalkDialogueTextAudio from Config Editor SIMPLE
 -- @author ewan
--- @version 1.3
+-- @version 1.4
 -- @changelog
---    Now handles blank cells correctly.
+--    Bug fix: handles ids with no underscores correctly.
 
 -- @about
 --   Non-UI version. Copy the first five columns from config and paste them into reaper.
@@ -169,7 +169,12 @@ lastColour = colour
 reaper.AddProjectMarker2(0, true, currentPos, endPos-1, id, -1, reaper.ColorToNative(R,G,B)|0x1000000)
 --insert region with id
 
-lastIdNPCTag = id:match("([^_]+_[^_]+_)")
+_, underscorecount = string.gsub(id, "_", "_")
+          if underscorecount >= 2 or underscorecount == nil then
+          lastIdNPCTag = id:match("([^_]+_[^_]+_)")
+          else
+          lastIdNPCTag = "convoIDnotRelevant"
+          end
 -- END OF COLOUR THEORY. ba dum chhh
 
 end
@@ -182,6 +187,6 @@ reaper.Undo_BeginBlock()
 
 main()
 
-reaper.Undo_EndBlock("Paste from Config Editor",-1)
+reaper.Undo_EndBlock("Paste from Config Editor (NPCTalkDialogueTextAudio",-1)
 
 end
