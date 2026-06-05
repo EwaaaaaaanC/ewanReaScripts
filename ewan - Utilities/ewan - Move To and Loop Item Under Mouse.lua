@@ -1,13 +1,24 @@
 -- @description Move To and Loop Item under Mouse (respects record state)
 -- @author ewan
--- @version 1.1
+-- @version 1.2
 -- @changelog
---    bug fix for stability
+--    defer loop is now inside item checks to reduce CPU when spam-clicking
 
 -- @about
 --    Move To and Loop Item under Mouse. Respects the recording state of the project.
 --    Allows quick maneuvering through projects for recording and auditioning.
 
+local function run_deferred_logic()
+    -- Check if the elapsed time is less than the delay 
+    if reaper.time_precise() - start_time < delay_time then
+        -- Run this function again in the next cycle
+        reaper.defer(run_deferred_logic) 
+    else
+        -- Once the delay is over, execute your code
+        --reaper.ShowConsoleMsg("Delay complete! Executing code now.\n")
+        reaper.SetExtState("ewanRecordingStatus","status","default",false)
+    end
+end
 
 -- SINGLE RUN
 -- Find the item under the mouse
@@ -17,6 +28,13 @@ if editItem == nil then
 --reaper.MB("ERROR","NO ITEM HERE",0)
 return
 else
+
+-- Define delay duration in seconds
+ delay_time = 0.15
+ start_time = reaper.time_precise()
+-- Start the loop
+run_deferred_logic()
+
 local editItemTrack = reaper.GetMediaItemTrack(editItem)
 
 -- get Play State of the project.
@@ -49,21 +67,7 @@ reaper.Undo_EndBlock("Move To and Loop Item under Mouse", -1)
 end      
 
 reaper.SetExtState("ewanRecordingStatus","status","activated",false)
--- Define delay duration in seconds
- delay_time = 0.15
- start_time = reaper.time_precise()
 
-local function run_deferred_logic()
-    -- Check if the elapsed time is less than the delay 
-    if reaper.time_precise() - start_time < delay_time then
-        -- Run this function again in the next cycle
-        reaper.defer(run_deferred_logic) 
-    else
-        -- Once the delay is over, execute your code
-        --reaper.ShowConsoleMsg("Delay complete! Executing code now.\n")
-        reaper.SetExtState("ewanRecordingStatus","status","default",false)
-    end
-end
 
--- Start the loop
-run_deferred_logic()
+
+
