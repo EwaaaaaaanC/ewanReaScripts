@@ -1,13 +1,15 @@
 -- @description Move To and Loop Item under Mouse (respects record state)
 -- @author ewan
--- @version 0.9
+-- @version 1
 -- @changelog
---    fixed issue where item became unselected when in record mode.
+--    now sets an extstate used to blink the new take signal.
 
 -- @about
 --    Move To and Loop Item under Mouse. Respects the recording state of the project.
 --    Allows quick maneuvering through projects for recording and auditioning.
 
+
+-- SINGLE RUN
 -- Find the item under the mouse
 mouseX, mouseY = reaper.GetMousePosition()
 local editItem = reaper.GetItemFromPoint(mouseX,mouseY,false)
@@ -33,7 +35,6 @@ reaper.Main_OnCommand(reaper.NamedCommandLookup("_SWS_SETREPEAT"), -1)
 reaper.GetSet_LoopTimeRange(true,true,pos,endPos,true)
 
 -- move playhead to item, and record if already in recording mode.
-if playState == 1 or playState == 0 then
 reaper.SetEditCurPos( pos, false, true )
 end
 if playState == 5 then
@@ -45,4 +46,25 @@ reaper.SetMediaItemSelected(editItem,true)
 reaper.UpdateArrange()
 
 reaper.Undo_EndBlock("Move To and Loop Item under Mouse", -1)
-end       
+end      
+
+reaper.SetExtState("ewanRecordingStatus","status","activated",false)
+-- Define delay duration in seconds
+ delay_time = 0.15
+ start_time = reaper.time_precise()
+
+local function run_deferred_logic()
+    -- Check if the elapsed time is less than the delay 
+    if reaper.time_precise() - start_time < delay_time then
+        -- Run this function again in the next cycle
+        reaper.defer(run_deferred_logic) 
+    else
+        -- Once the delay is over, execute your code
+        --reaper.ShowConsoleMsg("Delay complete! Executing code now.\n")
+        reaper.SetExtState("ewanRecordingStatus","status","default",false)
+    end
+end
+
+-- Start the loop
+run_deferred_logic()
+
