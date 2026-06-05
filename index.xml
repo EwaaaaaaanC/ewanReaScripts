@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="c86bc6641b5dbc7b8154f5aebedb679713a0c6d4">
+<index version="1" name="ewan's ReaScripts" commit="164945182980cf23080e3ac43a0c47a7b45378e7">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items (No Name Prompt).lua" type="script" desc="Create Pooled Automation Items For Selected Items (No Name Prompt)">
       <metadata>
@@ -466,6 +466,10 @@ Concatenate names feature now checks for duplicate region names and doesn't conc
       <version name="1.1" author="ewan" time="2026-06-05T02:31:11Z">
         <changelog><![CDATA[bug fix for stability]]></changelog>
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c86bc6641b5dbc7b8154f5aebedb679713a0c6d4/ewan%20-%20Utilities/ewan%20-%20Move%20To%20and%20Loop%20Item%20Under%20Mouse.lua</source>
+      </version>
+      <version name="1.2" author="ewan" time="2026-06-05T02:40:59Z">
+        <changelog><![CDATA[defer loop is now inside item checks to reduce CPU when spam-clicking]]></changelog>
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/164945182980cf23080e3ac43a0c47a7b45378e7/ewan%20-%20Utilities/ewan%20-%20Move%20To%20and%20Loop%20Item%20Under%20Mouse.lua</source>
       </version>
     </reapack>
     <reapack name="ewan - New Take Blinker.lua" type="script" desc="New Take Blinker">
