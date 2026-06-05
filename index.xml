@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="164945182980cf23080e3ac43a0c47a7b45378e7">
+<index version="1" name="ewan's ReaScripts" commit="9836cb418ef1a47337155fc52096674ca9474b63">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items (No Name Prompt).lua" type="script" desc="Create Pooled Automation Items For Selected Items (No Name Prompt)">
       <metadata>
@@ -471,10 +471,18 @@ Concatenate names feature now checks for duplicate region names and doesn't conc
         <changelog><![CDATA[defer loop is now inside item checks to reduce CPU when spam-clicking]]></changelog>
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/164945182980cf23080e3ac43a0c47a7b45378e7/ewan%20-%20Utilities/ewan%20-%20Move%20To%20and%20Loop%20Item%20Under%20Mouse.lua</source>
       </version>
+      <version name="1.3" author="ewan" time="2026-06-05T03:37:00Z">
+        <changelog><![CDATA[bug fix. text was losing focus.]]></changelog>
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/9836cb418ef1a47337155fc52096674ca9474b63/ewan%20-%20Utilities/ewan%20-%20Move%20To%20and%20Loop%20Item%20Under%20Mouse.lua</source>
+      </version>
     </reapack>
     <reapack name="ewan - New Take Blinker.lua" type="script" desc="New Take Blinker">
       <version name="1" author="ewan" time="2026-06-05T02:14:01Z">
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/b9478d3803ed98bfd79c917fcb9712381efcbe16/ewan%20-%20Utilities/ewan%20-%20New%20Take%20Blinker.lua</source>
+      </version>
+      <version name="1.1" author="ewan" time="2026-06-05T03:37:00Z">
+        <changelog><![CDATA[Changed colour to be more standardised and less violent.]]></changelog>
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/9836cb418ef1a47337155fc52096674ca9474b63/ewan%20-%20Utilities/ewan%20-%20New%20Take%20Blinker.lua</source>
       </version>
     </reapack>
     <reapack name="ewan - Paste Audio from Config Editor.lua" type="script" desc="Paste Audio from Config Editor">
