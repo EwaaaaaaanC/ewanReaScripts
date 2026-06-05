@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="cfb28b6d0a7c2d37795d40bca0938f0509fc7b73">
+<index version="1" name="ewan's ReaScripts" commit="b9478d3803ed98bfd79c917fcb9712381efcbe16">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items (No Name Prompt).lua" type="script" desc="Create Pooled Automation Items For Selected Items (No Name Prompt)">
       <metadata>
@@ -462,6 +462,11 @@ Concatenate names feature now checks for duplicate region names and doesn't conc
       <version name="1" author="ewan" time="2026-06-05T02:10:55Z">
         <changelog><![CDATA[now sets an extstate used to blink the new take signal.]]></changelog>
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/9b950c70077f73fadd8cb8beb4518971e79fbbc6/ewan%20-%20Utilities/ewan%20-%20Move%20To%20and%20Loop%20Item%20Under%20Mouse.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - New Take Blinker.lua" type="script" desc="New Take Blinker">
+      <version name="1" author="ewan" time="2026-06-05T02:14:01Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/b9478d3803ed98bfd79c917fcb9712381efcbe16/ewan%20-%20Utilities/ewan%20-%20New%20Take%20Blinker.lua</source>
       </version>
     </reapack>
     <reapack name="ewan - Paste Audio from Config Editor.lua" type="script" desc="Paste Audio from Config Editor">
