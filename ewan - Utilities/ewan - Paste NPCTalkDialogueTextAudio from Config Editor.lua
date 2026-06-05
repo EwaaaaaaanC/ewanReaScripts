@@ -1,8 +1,8 @@
 -- @description Paste NPCTalkDialogueTextAudio from Config Editor
 -- @author ewan
--- @version 2
+-- @version 2.1
 -- @changelog
---    Stable version
+--    Fixed error: mercenary was on options twice, duelist was missing.
 
 -- @about
 --   Copy the first five columns from config and paste them into reaper.
@@ -29,7 +29,7 @@ conversionTable = {"NPCs","Marauder", "Witch", "Ranger", "Duelist", "Shadow", "T
 "NPCs","Metadata/Characters/Str/StrFour", "Metadata/Characters/Int/IntFour", "Metadata/Characters/Dex/DexFour", "Metadata/Characters/StrDex/StrDexFour", "Metadata/Characters/DexInt/DexIntFour", "Metadata/Characters/StrInt/StrIntFour", "Metadata/Characters/Str/StrFourb", "Metadata/Characters/Int/IntFourb", "Metadata/Characters/Dex/DexFourb", "Metadata/Characters/StrDex/StrDexFourb", "Metadata/Characters/DexInt/DexIntFourb", "Metadata/Characters/StrInt/StrIntFourb" }
 
 -- order of the list in the GUI.
-checklistOrder = {"NPCs", "Warrior", "Witch", "Sorceress", "Ranger", "Huntress", "Mercenary", "Monk", "Druid", "Mercenary", "Shadow", "Templar", "Marauder"}
+checklistOrder = {"NPCs", "Warrior", "Witch", "Sorceress", "Ranger", "Huntress", "Mercenary", "Monk", "Druid", "Duelist", "Shadow", "Templar", "Marauder"}
 
 -- this table gets populated on button press to a list of who can be imported.
 whoToImport = {}
@@ -153,7 +153,7 @@ GUI.New("Who to Import", "Checklist", {
     w = 96,
     h = 340,
     caption = "NPCTalkDialogue\nTextAudio",
-    optarray = {"NPCs", "Warrior", "Witch", "Sorceress", "Ranger", "Huntress", "Mercenary", "Monk", "Druid", "Mercenary", "Shadow", "Templar", "Marauder"},
+    optarray = {"NPCs", "Warrior", "Witch", "Sorceress", "Ranger", "Huntress", "Mercenary", "Monk", "Druid", "Duelist", "Shadow", "Templar", "Marauder"},
     dir = "v",
     pad = 4,
     font_a = 2,
@@ -381,5 +381,4 @@ end
         end
 end
 end
-
 
