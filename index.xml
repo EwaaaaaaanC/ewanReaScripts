@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="9836cb418ef1a47337155fc52096674ca9474b63">
+<index version="1" name="ewan's ReaScripts" commit="b7d95d8f6459ba33982909f7e450eaa31e6f18ed">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items (No Name Prompt).lua" type="script" desc="Create Pooled Automation Items For Selected Items (No Name Prompt)">
       <metadata>
@@ -577,6 +577,10 @@ Gui Naming improved.]]></changelog>
       <version name="2" author="ewan" time="2026-06-05T02:24:04Z">
         <changelog><![CDATA[Stable version]]></changelog>
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/6662bb7e33106dda653513c21ef81d692dce3e09/ewan%20-%20Utilities/ewan%20-%20Paste%20NPCTalkDialogueTextAudio%20from%20Config%20Editor.lua</source>
+      </version>
+      <version name="2.1" author="ewan" time="2026-06-05T04:05:53Z">
+        <changelog><![CDATA[Fixed error: mercenary was on options twice, duelist was missing.]]></changelog>
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/b7d95d8f6459ba33982909f7e450eaa31e6f18ed/ewan%20-%20Utilities/ewan%20-%20Paste%20NPCTalkDialogueTextAudio%20from%20Config%20Editor.lua</source>
       </version>
     </reapack>
     <reapack name="ewan - Paste NPCTextAudio from Config Editor.lua" type="script" desc="Paste NPCTextAudio from Config Editor SIMPLE">
