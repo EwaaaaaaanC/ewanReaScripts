@@ -1,8 +1,8 @@
 -- @description Move To and Loop Item under Mouse (respects record state)
 -- @author ewan
--- @version 1
+-- @version 1.1
 -- @changelog
---    now sets an extstate used to blink the new take signal.
+--    bug fix for stability
 
 -- @about
 --    Move To and Loop Item under Mouse. Respects the recording state of the project.
@@ -35,14 +35,13 @@ reaper.Main_OnCommand(reaper.NamedCommandLookup("_SWS_SETREPEAT"), -1)
 reaper.GetSet_LoopTimeRange(true,true,pos,endPos,true)
 
 -- move playhead to item, and record if already in recording mode.
-if playState ~= 5 then
 reaper.SetEditCurPos( pos, false, true )
 end
 if playState == 5 then
 reaper.Main_OnCommand(1013,-1)
 reaper.SetEditCurPos( pos, false, true )
 reaper.Main_OnCommand(1013,-1)
-end
+else
 reaper.SetMediaItemSelected(editItem,true)
 reaper.UpdateArrange()
 
@@ -68,4 +67,3 @@ end
 
 -- Start the loop
 run_deferred_logic()
-
