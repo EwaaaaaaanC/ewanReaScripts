@@ -1,8 +1,8 @@
 -- @description Paste NPCTalkDialogueTextAudio from Config Editor
 -- @author ewan
--- @version 1.8
+-- @version 2
 -- @changelog
---    Improved GUI naming and layout
+--    Stable version
 
 -- @about
 --   Copy the first five columns from config and paste them into reaper.
