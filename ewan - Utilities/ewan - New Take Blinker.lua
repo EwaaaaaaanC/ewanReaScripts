@@ -1,8 +1,8 @@
 -- @description New Take Blinker
 -- @author ewan
--- @version 1.1
+-- @version 1.2
 -- @changelog
---    Changed colour to be more standardised and less violent.
+--    Changed colour to reflect record state.
 
 -- @about
 --    Blinks red every time Move To and Loop Item Under Mouse script is used.
@@ -10,7 +10,7 @@
 
 
 --set width and height
-w = 100
+w = 150
 h = w
 
 posX = 200
@@ -28,12 +28,16 @@ function main()
   status = reaper.GetExtState("ewanRecordingStatus","status")
   
   if status == "activated" then
-  gfx.set(0, 1, 0, 1) -- Green
+  gfx.set(0.3, 1, 0.7, 1) -- Green
   gfx.rect(20, 20, w-40, h-40, 0.8)
   
   else
-  gfx.set(0.8, 0.8, 0.8, 1) -- White
-  gfx.rect(20, 20, w-40, h-40, 0)
+    if playState == 5 then
+    gfx.set(1, 0.6, 0.6, 1) -- Faint Red
+    else
+    gfx.set(0.6, 0.6, 0.6, 1) -- Grey
+    end
+  gfx.rect(20, 20, w-40, h-40, 0) 
   end
 
   -- 5. Keep window alive and catch closure (char 27 = Escape key)
