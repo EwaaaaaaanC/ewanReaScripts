@@ -1,8 +1,8 @@
 -- @description Move To and Loop Item under Mouse (respects record state)
 -- @author ewan
--- @version 1.2
+-- @version 1.3
 -- @changelog
---    defer loop is now inside item checks to reduce CPU when spam-clicking
+--    bug fix. text was losing focus.
 
 -- @about
 --    Move To and Loop Item under Mouse. Respects the recording state of the project.
@@ -59,15 +59,13 @@ if playState == 5 then
 reaper.Main_OnCommand(1013,-1)
 reaper.SetEditCurPos( pos, false, true )
 reaper.Main_OnCommand(1013,-1)
-else
+end
+
+reaper.SelectAllMediaItems(0,false)
 reaper.SetMediaItemSelected(editItem,true)
 reaper.UpdateArrange()
 
 reaper.Undo_EndBlock("Move To and Loop Item under Mouse", -1)
-end      
+      
 
 reaper.SetExtState("ewanRecordingStatus","status","activated",false)
-
-
-
-
