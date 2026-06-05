@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="b7d95d8f6459ba33982909f7e450eaa31e6f18ed">
+<index version="1" name="ewan's ReaScripts" commit="617eea82c25f38385dab5152614c11c36bff3579">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items (No Name Prompt).lua" type="script" desc="Create Pooled Automation Items For Selected Items (No Name Prompt)">
       <metadata>
@@ -377,6 +377,11 @@ Concatenate names feature now checks for duplicate region names and doesn't conc
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/466a505697b340c1521be8931d6ed2c534d3e65c/ewan%20-%20Editing%20Scripts/ewan%20-%20Split%20Item%20Under%20Mouse%20Cursor%20(select%20new%20item).lua</source>
       </version>
     </reapack>
+    <reapack name="Expand Item to Full Source Length, Preserving Take Timing.lua" type="script" desc="Expand item to full source length, preserving take timing.">
+      <version name="0.8" author="ewan" time="2026-06-05T04:33:50Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/617eea82c25f38385dab5152614c11c36bff3579/ewan%20-%20Editing%20Scripts/Expand%20Item%20to%20Full%20Source%20Length,%20Preserving%20Take%20Timing.lua</source>
+      </version>
+    </reapack>
   </category>
   <category name="ewan - Naming Scripts">
     <reapack name="ewan - Find and Replace Item Names.lua" type="script" desc="Find and Replace Item Names">
@@ -483,6 +488,10 @@ Concatenate names feature now checks for duplicate region names and doesn't conc
       <version name="1.1" author="ewan" time="2026-06-05T03:37:00Z">
         <changelog><![CDATA[Changed colour to be more standardised and less violent.]]></changelog>
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/9836cb418ef1a47337155fc52096674ca9474b63/ewan%20-%20Utilities/ewan%20-%20New%20Take%20Blinker.lua</source>
+      </version>
+      <version name="1.2" author="ewan" time="2026-06-05T04:13:33Z">
+        <changelog><![CDATA[Changed colour to reflect record state.]]></changelog>
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/85920f34a05cddcd2853636b1916229790abba36/ewan%20-%20Utilities/ewan%20-%20New%20Take%20Blinker.lua</source>
       </version>
     </reapack>
     <reapack name="ewan - Paste Audio from Config Editor.lua" type="script" desc="Paste Audio from Config Editor">
