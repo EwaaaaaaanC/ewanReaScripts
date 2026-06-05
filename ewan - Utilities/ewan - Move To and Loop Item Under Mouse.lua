@@ -35,6 +35,7 @@ reaper.Main_OnCommand(reaper.NamedCommandLookup("_SWS_SETREPEAT"), -1)
 reaper.GetSet_LoopTimeRange(true,true,pos,endPos,true)
 
 -- move playhead to item, and record if already in recording mode.
+if playState ~= 5 then
 reaper.SetEditCurPos( pos, false, true )
 end
 if playState == 5 then
