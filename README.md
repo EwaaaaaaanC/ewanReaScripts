@@ -1,1 +1,1 @@
-reaScripts made by ewan — enjoy!
+reaScripts made by ewan — hope they are useful!
