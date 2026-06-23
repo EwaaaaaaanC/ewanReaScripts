@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="a476cb7f514d8aa4d7c5bb12af383c40feacd687">
+<index version="1" name="ewan's ReaScripts" commit="60db3c19e2a011c79067dcedad69a3ed1a6efaa9">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items (No Name Prompt).lua" type="script" desc="Create Pooled Automation Items For Selected Items (No Name Prompt)">
       <metadata>
@@ -382,7 +382,7 @@ Concatenate names feature now checks for duplicate region names and doesn't conc
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/466a505697b340c1521be8931d6ed2c534d3e65c/ewan%20-%20Editing%20Scripts/ewan%20-%20Split%20Item%20Under%20Mouse%20Cursor%20(select%20new%20item).lua</source>
       </version>
     </reapack>
-    <reapack name="ewan - Toggle Show Take Volume Envelope for All Items..lua" type="script" desc="Toggle Show Take Volume Envelope for All Items">
+    <reapack name="ewan - Toggle Show Take Volume Envelope for All Items.lua" type="script" desc="Toggle Show Take Volume Envelope for All Items">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
@@ -392,8 +392,8 @@ Concatenate names feature now checks for duplicate region names and doesn't conc
 }
 ]]></description>
       </metadata>
-      <version name="1" author="ewan" time="2026-06-23T06:11:39Z">
-        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/a476cb7f514d8aa4d7c5bb12af383c40feacd687/ewan%20-%20Editing%20Scripts/ewan%20-%20Toggle%20Show%20Take%20Volume%20Envelope%20for%20All%20Items..lua</source>
+      <version name="1" author="ewan" time="2026-06-23T06:24:39Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/60db3c19e2a011c79067dcedad69a3ed1a6efaa9/ewan%20-%20Editing%20Scripts/ewan%20-%20Toggle%20Show%20Take%20Volume%20Envelope%20for%20All%20Items.lua</source>
       </version>
     </reapack>
   </category>
