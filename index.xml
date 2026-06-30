@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="60db3c19e2a011c79067dcedad69a3ed1a6efaa9">
+<index version="1" name="ewan's ReaScripts" commit="9fbad273f87a3c4b5283f1ba62715622089e98d2">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items (No Name Prompt).lua" type="script" desc="Create Pooled Automation Items For Selected Items (No Name Prompt)">
       <metadata>
@@ -510,6 +510,10 @@ Concatenate names feature now checks for duplicate region names and doesn't conc
         <changelog><![CDATA[bug fix. text was losing focus.]]></changelog>
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/9836cb418ef1a47337155fc52096674ca9474b63/ewan%20-%20Utilities/ewan%20-%20Move%20To%20and%20Loop%20Item%20Under%20Mouse.lua</source>
       </version>
+      <version name="1.4" author="ewan" time="2026-06-30T01:42:53Z">
+        <changelog><![CDATA[Now uses looping instead of creating a new file when looping or restarting the same line.]]></changelog>
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/9fbad273f87a3c4b5283f1ba62715622089e98d2/ewan%20-%20Utilities/ewan%20-%20Move%20To%20and%20Loop%20Item%20Under%20Mouse.lua</source>
+      </version>
     </reapack>
     <reapack name="ewan - New Take Blinker.lua" type="script" desc="New Take Blinker">
       <version name="1" author="ewan" time="2026-06-05T02:14:01Z">
@@ -522,6 +526,10 @@ Concatenate names feature now checks for duplicate region names and doesn't conc
       <version name="1.2" author="ewan" time="2026-06-05T04:13:33Z">
         <changelog><![CDATA[Changed colour to reflect record state.]]></changelog>
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/85920f34a05cddcd2853636b1916229790abba36/ewan%20-%20Utilities/ewan%20-%20New%20Take%20Blinker.lua</source>
+      </version>
+      <version name="1.3" author="ewan" time="2026-06-30T01:42:53Z">
+        <changelog><![CDATA[Now has a "resetting" orange mode to pre-empt when looping restarts]]></changelog>
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/9fbad273f87a3c4b5283f1ba62715622089e98d2/ewan%20-%20Utilities/ewan%20-%20New%20Take%20Blinker.lua</source>
       </version>
     </reapack>
     <reapack name="ewan - Paste Audio from Config Editor.lua" type="script" desc="Paste Audio from Config Editor">
