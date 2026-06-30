@@ -1,12 +1,15 @@
 -- @description Move To and Loop Item under Mouse (respects record state)
 -- @author ewan
--- @version 1.3
+-- @version 1.4
 -- @changelog
---    bug fix. text was losing focus.
+--    Now uses looping instead of creating a new file when looping or restarting the same line.
 
 -- @about
 --    Move To and Loop Item under Mouse. Respects the recording state of the project.
 --    Allows quick maneuvering through projects for recording and auditioning.
+
+
+leadInTime = 0.5
 
 local function run_deferred_logic()
     -- Check if the elapsed time is less than the delay 
@@ -20,6 +23,28 @@ local function run_deferred_logic()
     end
 end
 
+
+local function resetLoopAfterDelay()
+    -- Check if the elapsed time is less than the delay 
+    if reaper.time_precise() - start_time < leadInTime+0.05 then
+        -- Run this function again in the next cycle
+        reaper.defer(resetLoopAfterDelay) 
+    else
+        -- Once the delay is over, execute your code
+        --reaper.ShowConsoleMsg("Delay complete! Executing code now.\n")
+        loopItem = reaper.GetSelectedMediaItem(0,0)
+        posLoopItem = reaper.GetMediaItemInfo_Value(loopItem,"D_POSITION")
+        lenLoopItem = reaper.GetMediaItemInfo_Value(loopItem,"D_LENGTH") 
+        loopItemendPos = posLoopItem+lenLoopItem
+        
+        reaper.Main_OnCommand(reaper.NamedCommandLookup("_SWS_SETREPEAT"), -1) 
+        reaper.GetSet_LoopTimeRange(true,true,posLoopItem,loopItemendPos,true)
+        reaper.SetExtState("ewanRecordingStatus","status","activated",false)
+        start_time = reaper.time_precise()
+        run_deferred_logic()
+    end
+end
+ 
 -- SINGLE RUN
 -- Find the item under the mouse
 mouseX, mouseY = reaper.GetMousePosition()
@@ -33,7 +58,6 @@ else
  delay_time = 0.15
  start_time = reaper.time_precise()
 -- Start the loop
-run_deferred_logic()
 
 local editItemTrack = reaper.GetMediaItemTrack(editItem)
 
@@ -48,24 +72,44 @@ pos = reaper.GetMediaItemInfo_Value(editItem,"D_POSITION")
 len = reaper.GetMediaItemInfo_Value(editItem,"D_LENGTH") 
 endPos = pos+len
 
+playhead = reaper.GetPlayPosition2()
+
+if playhead >= pos and playhead <= endPos then
+alreadyInLoop = true
+else
+alreadyInLoop = false
+end
+
 --ensure looping transport mode is on and set loop time to match item.
 reaper.Main_OnCommand(reaper.NamedCommandLookup("_SWS_SETREPEAT"), -1) 
 reaper.GetSet_LoopTimeRange(true,true,pos,endPos,true)
 
+if alreadyInLoop == false then
 -- move playhead to item, and record if already in recording mode.
-reaper.SetEditCurPos( pos, false, true )
-end
-if playState == 5 then
-reaper.Main_OnCommand(1013,-1)
-reaper.SetEditCurPos( pos, false, true )
-reaper.Main_OnCommand(1013,-1)
+  reaper.SetEditCurPos( pos, false, true )
+  if playState == 5 then
+  reaper.Main_OnCommand(1013,-1) 
+  reaper.SetEditCurPos( pos, false, true ) 
+  reaper.Main_OnCommand(1013,-1)
+  end
+  reaper.SetExtState("ewanRecordingStatus","status","activated",false)
+  run_deferred_logic()
 end
 
-reaper.SelectAllMediaItems(0,false)
+if alreadyInLoop == true then
+  reaper.GetSet_LoopTimeRange(true,true,pos,playhead+leadInTime,true)
+  reaper.SetExtState("ewanRecordingStatus","status","resetting",false)
+  resetLoopAfterDelay()
+end
+
+
+reaper.SelectAllMediaItems(0,false) 
 reaper.SetMediaItemSelected(editItem,true)
+
+end
 reaper.UpdateArrange()
 
 reaper.Undo_EndBlock("Move To and Loop Item under Mouse", -1)
       
 
-reaper.SetExtState("ewanRecordingStatus","status","activated",false)
+--reaper.SetExtState("ewanRecordingStatus","status","activated",false)

@@ -1,8 +1,8 @@
 -- @description New Take Blinker
 -- @author ewan
--- @version 1.2
+-- @version 1.3
 -- @changelog
---    Changed colour to reflect record state.
+--    Now has a "resetting" orange mode to pre-empt when looping restarts
 
 -- @about
 --    Blinks red every time Move To and Loop Item Under Mouse script is used.
@@ -30,14 +30,20 @@ function main()
   if status == "activated" then
   gfx.set(0.3, 1, 0.7, 1) -- Green
   gfx.rect(20, 20, w-40, h-40, 0.8)
+  end
   
-  else
+  if status == "default" then
     if playState == 5 then
     gfx.set(1, 0.6, 0.6, 1) -- Faint Red
     else
     gfx.set(0.6, 0.6, 0.6, 1) -- Grey
     end
   gfx.rect(20, 20, w-40, h-40, 0) 
+  end
+  
+  if status == "resetting" then
+  gfx.set(1, 0.67, 0, 0.7) -- Orange
+  gfx.rect(20, 20, w-40, h-40, 0.9) 
   end
 
   -- 5. Keep window alive and catch closure (char 27 = Escape key)
