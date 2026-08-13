@@ -1,8 +1,9 @@
 -- @description Paste Audio from Config Editor
 -- @author ewan
--- @version 1.1
+-- @version 1.2
 -- @changelog
---    Added spacing feature and ability to cancel from this dialogue (ba dum chh) box.
+--    Default line spacing is now 0.5
+--    Undo naming is improved.
 
 -- @about
 --   Allows pasting config audio file paths into Reaper.
@@ -17,7 +18,7 @@ dialoguePath = [[D:\SVN\4.0.0\bin\Client\Audio\Dialogue\]]
 -- Then, run this script.
 -- The assets in the audio file will be pasted into Reaper.
 
-retval, spacing = reaper.GetUserInputs("ewan: Paste From Config (NPCTalkDialogueTextAudio)", 1, "Space between lines(s)","5")
+retval, spacing = reaper.GetUserInputs("ewan: Paste Audio Assets From Config", 1, "Space between lines(s)","0.5")
 
 function main()
 
