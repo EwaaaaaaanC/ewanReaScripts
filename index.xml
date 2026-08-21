@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="ec4adc37f0fdf38abba675a5f2125d0d3b64d4ab">
+<index version="1" name="ewan's ReaScripts" commit="0409522aa191f5d528d54f02e4c2bf0a2606a4a6">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items (No Name Prompt).lua" type="script" desc="Create Pooled Automation Items For Selected Items (No Name Prompt)">
       <metadata>
@@ -303,6 +303,34 @@ Concatenate names feature now checks for duplicate region names and doesn't conc
       </metadata>
       <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Create%20Marker%20Scripts/ewan%20-%20Create%20Regions%20from%20Item%20Names%20(file%20extensions%20removed).lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Create Regions In Time Selection (Clipboard-Named) following colour scheme.lua" type="script" desc="Create Clipboard-Named Regions In Time Selection, following colour scheme.">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Creates a region within the time selection following a colour scheme.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1" author="ewan" time="2026-08-21T06:14:41Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/0409522aa191f5d528d54f02e4c2bf0a2606a4a6/ewan%20-%20Create%20Marker%20Scripts/ewan%20-%20Create%20Regions%20In%20Time%20Selection%20(Clipboard-Named)%20following%20colour%20scheme.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Create Regions In Time Selection (User-Named) following colour scheme.lua" type="script" desc="Create User-Named Regions In Time Selection, following colour scheme.">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Creates a region within the time selection following a colour scheme.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1" author="ewan" time="2026-08-21T06:14:41Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/0409522aa191f5d528d54f02e4c2bf0a2606a4a6/ewan%20-%20Create%20Marker%20Scripts/ewan%20-%20Create%20Regions%20In%20Time%20Selection%20(User-Named)%20following%20colour%20scheme.lua</source>
       </version>
     </reapack>
   </category>
