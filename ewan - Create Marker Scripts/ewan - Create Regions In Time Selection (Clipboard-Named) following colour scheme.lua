@@ -1,14 +1,20 @@
 -- @description Create Clipboard-Named Regions In Time Selection, following colour scheme.
 -- @author ewan
--- @version 1
+-- @version 1.1
 -- @about
 --   Creates a region within the time selection following a colour scheme.
+
+-- @changelog
+--    Now does not re-colour markers by default.
 
 -- The colour used is chosen at random, and is guaranteed to not be the same as the preceeding region.
 -- On the below line is where you can define your colour scheme with hex codes.
 -- This script is a bit messy, but works without problem.
 
 colourscheme = {"#FFBE0B", "#FB5607", "#FF006E", "#8338EC", "#3A86FF", "#329E32"} -- There is no max no. of colours.
+
+-- change the below variable to true if you want to re-colour markers.
+recolourMarkers = false
 
 reaper.PreventUIRefresh(1)
 
@@ -84,13 +90,15 @@ num_markers = reaper.CountProjectMarkers(0)
     -- Do nothing if the region is out of bounce
     else
     --reaper.SetProjectMarker3(0,markrgnindexnumber,isrgn,pos,rgnend,name,r.ColorToNative(arg1,arg2,arg3)|0x1000000)
-            if i % 2 == 0 and alternateBrightness == 1 then
-            local dimR = math.max(R - 33, 0)
-            local dimG = math.max(G - 33, 0)
-            local dimB = math.max(B - 33, 0)
-            reaper.SetProjectMarker3(0,markrgnindexnumber,isrgn,pos,rgnend,name,r.ColorToNative(dimR,dimG,dimB)|0x1000000)
-            else
-            reaper.SetProjectMarker3(0,markrgnindexnumber,isrgn,pos,rgnend,name,r.ColorToNative(arg1,arg2,arg3)|0x1000000)
+           if isrgn or recolourMarkers then 
+                if i % 2 == 0 and alternateBrightness == 1 then
+                local dimR = math.max(R - 33, 0)
+                local dimG = math.max(G - 33, 0)
+                local dimB = math.max(B - 33, 0)
+                reaper.SetProjectMarker3(0,markrgnindexnumber,isrgn,pos,rgnend,name,r.ColorToNative(dimR,dimG,dimB)|0x1000000)
+                else
+                reaper.SetProjectMarker3(0,markrgnindexnumber,isrgn,pos,rgnend,name,r.ColorToNative(arg1,arg2,arg3)|0x1000000)
+                end
             end
     end
   end
