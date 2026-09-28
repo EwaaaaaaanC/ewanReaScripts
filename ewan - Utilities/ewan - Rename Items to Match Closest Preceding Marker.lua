@@ -1,11 +1,16 @@
--- @description Rename Items to Match Closest Preceding Marker.
+-- @description Rename Selected Items to Match Closest Preceding Marker.
 -- @author ewan
--- @version 0.7
+-- @version 0.8
+-- @changelog
+--   Added Undo Block
 -- @about
 --   Looks for the closest marker before each selected items and renames each after that.
 
 
 -- note: quick scripting, bit messy
+
+reaper.Undo_BeginBlock()
+
 count_sel_items = reaper.CountSelectedMediaItems(0)
   if count_sel_items > 0 then
     for i = 0, count_sel_items - 1 do
@@ -38,3 +43,5 @@ count_sel_items = reaper.CountSelectedMediaItems(0)
 
     end
   end
+  
+reaper.Undo_EndBlock("Rename Selected Items to Match Closest Preceding Marker",1)
