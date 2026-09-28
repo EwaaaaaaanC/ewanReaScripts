@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="ac45a5f44f0e7217bb84af0b15b565ceb64ed33c">
+<index version="1" name="ewan's ReaScripts" commit="ebd9222447c8dfac54db261eef9750610a5bc86f">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items (No Name Prompt).lua" type="script" desc="Create Pooled Automation Items For Selected Items (No Name Prompt)">
       <metadata>
@@ -716,6 +716,10 @@ Fixed descriptions to reflect proper use.]]></changelog>
       </metadata>
       <version name="0.7" author="ewan" time="2026-09-28T00:24:50Z">
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/7994f26f74378ac132afacf72d2b7289e45e10e1/ewan%20-%20Utilities/ewan%20-%20Rename%20Items%20Using%20Lookup%20Table%20(from%20clipboard).lua</source>
+      </version>
+      <version name="0.8" author="ewan" time="2026-09-28T05:07:42Z">
+        <changelog><![CDATA[Now renames notes if item has no takes (used for blank media items)]]></changelog>
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/ebd9222447c8dfac54db261eef9750610a5bc86f/ewan%20-%20Utilities/ewan%20-%20Rename%20Items%20Using%20Lookup%20Table%20(from%20clipboard).lua</source>
       </version>
     </reapack>
     <reapack name="ewan - Rename Selected Items to Match Closest Preceding Marker.lua" type="script" desc="Rename Selected Items to Match Closest Preceding Marker.">
