@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="7994f26f74378ac132afacf72d2b7289e45e10e1">
+<index version="1" name="ewan's ReaScripts" commit="73a5f1bd8ebbbf9feb7bb7a80574716af7cd2bf0">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items (No Name Prompt).lua" type="script" desc="Create Pooled Automation Items For Selected Items (No Name Prompt)">
       <metadata>
@@ -702,6 +702,20 @@ Gui Naming improved.]]></changelog>
         <changelog><![CDATA[Bug fix: handles colours and missing columns correctly.
 Fixed descriptions to reflect proper use.]]></changelog>
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/6afca4f9e193cd4617d77c1c6ec7033d4607c43a/ewan%20-%20Utilities/ewan%20-%20Paste%20NPCTextAudio%20from%20Config%20Editor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ewan - Rename Items to Match Closest Preceding Marker.lua" type="script" desc="Rename Items to Match Closest Preceding Marker.">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Looks for the closest marker before each selected items and renames each after that.\par}
+}
+]]></description>
+      </metadata>
+      <version name="0.7" author="ewan" time="2026-09-28T00:57:52Z">
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/73a5f1bd8ebbbf9feb7bb7a80574716af7cd2bf0/ewan%20-%20Utilities/ewan%20-%20Rename%20Items%20to%20Match%20Closest%20Preceding%20Marker.lua</source>
       </version>
     </reapack>
     <reapack name="ewan - Rename Items Using Lookup Table (from clipboard).lua" type="script" desc="Rename Items Using Lookup Table (from clipboard)">
