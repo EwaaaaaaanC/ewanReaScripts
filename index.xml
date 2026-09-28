@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="f6c146bdc45dc5e5a56ad55d73aa895fa9548386">
+<index version="1" name="ewan's ReaScripts" commit="ac45a5f44f0e7217bb84af0b15b565ceb64ed33c">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items (No Name Prompt).lua" type="script" desc="Create Pooled Automation Items For Selected Items (No Name Prompt)">
       <metadata>
@@ -731,6 +731,10 @@ Fixed descriptions to reflect proper use.]]></changelog>
       <version name="0.9" author="ewan" time="2026-09-28T03:38:37Z">
         <changelog><![CDATA[Now ignores markers with no names.]]></changelog>
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/1ef42d104d593328971e8437390df206c26585ab/ewan%20-%20Utilities/ewan%20-%20Rename%20Selected%20Items%20to%20Match%20Closest%20Preceding%20Marker.lua</source>
+      </version>
+      <version name="1" author="ewan" time="2026-09-28T04:36:07Z">
+        <changelog><![CDATA[Now renames notes if item has no takes (used for blank media items)]]></changelog>
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/ac45a5f44f0e7217bb84af0b15b565ceb64ed33c/ewan%20-%20Utilities/ewan%20-%20Rename%20Selected%20Items%20to%20Match%20Closest%20Preceding%20Marker.lua</source>
       </version>
     </reapack>
   </category>
