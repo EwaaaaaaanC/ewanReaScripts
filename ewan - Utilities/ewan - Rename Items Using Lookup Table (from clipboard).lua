@@ -1,6 +1,8 @@
 -- @description Rename Items Using Lookup Table (from clipboard)
 -- @author ewan
--- @version 0.7
+-- @version 0.8
+-- @changelog
+--   Now renames notes if item has no takes (used for blank media items)
 -- @about
 --   Copy two colums from a google sheet: column A will be the 'Find' values, column B will be the 'Replace' values.
 
@@ -42,7 +44,11 @@ count_sel_items = reaper.CountSelectedMediaItems(0)
     for i = 0, count_sel_items - 1 do
       item = reaper.GetSelectedMediaItem(0, i)
       take = reaper.GetActiveTake(item)
+      if take then
       takeName = reaper.GetTakeName(take)
+      else
+      retval, takeName = reaper.GetSetMediaItemInfo_String(item,"P_NOTES","",false)
+      end
       
       for i=0, eventCount -1 do
       
@@ -53,18 +59,28 @@ count_sel_items = reaper.CountSelectedMediaItems(0)
         output = string.gsub(takeName,eventString.."$",assetString)
         output = string.gsub(output,eventString.."%.",assetString)
         
+        if take then
         reaper.GetSetMediaItemTakeInfo_String(take,"P_NAME",output,true)
+        else
+        reaper.GetSetMediaItemInfo_String(item,"P_NOTES",output,true)
+        end
         
         -- keeps track of how many renames have taken place.
         if output ~= takeName then
         renameCount = renameCount+1
         if recolour then
-          reaper.SetMediaItemTakeInfo_Value(take, "I_CUSTOMCOLOR",  reaper.ColorToNative(R,G,B)|0x1000000)
+            if take then
+              reaper.SetMediaItemTakeInfo_Value(take, "I_CUSTOMCOLOR",  reaper.ColorToNative(R,G,B)|0x1000000)
+              else
+              reaper.SetMediaItemInfo_Value(item, "I_CUSTOMCOLOR",  reaper.ColorToNative(R,G,B)|0x1000000)
+              end
           end
         end
-        
+        if take then
         takeName = reaper.GetTakeName(take)
-      
+        else
+        retval, takeName = reaper.GetSetMediaItemInfo_String(item,"P_NOTES","",false)
+        end
       end
       
     end
