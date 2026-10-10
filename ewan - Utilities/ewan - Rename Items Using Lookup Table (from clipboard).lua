@@ -1,8 +1,8 @@
 -- @description Rename Items Using Lookup Table (from clipboard)
 -- @author ewan
--- @version 1.2
+-- @version 1.3
 -- @changelog
---   removes spaces from strings before replacing names.
+--   removes spaces only from ends of strings before replacing names. Also removes periods.
 -- @about
 --   Copy two colums from a google sheet: column A will be the 'Find' values, column B will be the 'Replace' values.
 
@@ -52,12 +52,12 @@ count_sel_items = reaper.CountSelectedMediaItems(0)
       else
       retval, takeName = reaper.GetSetMediaItemInfo_String(item,"P_NOTES","",false)
       end
-      takeName = string.gsub(takeName,"%s+","")
+      takeName = string.gsub(string.gsub(takeName,"%s+$",""),"%.","")
       
       for i=0, eventCount -1 do
       
-        eventString = string.gsub(configTable[i*3+1],"%s+","")
-        assetString = string.gsub(configTable[i*3+2],"%s+","")
+        eventString = string.gsub(configTable[i*3+1],"%s+$","")
+        assetString = string.gsub(configTable[i*3+2],"%s+$","")
         
         -- match event column A string only if followed by a . (such as .wav) or NOTHING.
         output = string.gsub(takeName,eventString.."$",assetString)
