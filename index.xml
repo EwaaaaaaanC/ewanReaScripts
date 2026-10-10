@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="904b235910a9ea12719f2cbdefd5e5daa10e4b42">
+<index version="1" name="ewan's ReaScripts" commit="21e84c974d606aeb822439c97df871e819c87c84">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items (No Name Prompt).lua" type="script" desc="Create Pooled Automation Items For Selected Items (No Name Prompt)">
       <metadata>
@@ -724,6 +724,10 @@ Fixed descriptions to reflect proper use.]]></changelog>
       <version name="1" author="ewan" time="2026-10-10T00:28:30Z">
         <changelog><![CDATA[Now only renames items on first selected track, to avoid renaming child items within folder items.]]></changelog>
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/904b235910a9ea12719f2cbdefd5e5daa10e4b42/ewan%20-%20Utilities/ewan%20-%20Rename%20Items%20Using%20Lookup%20Table%20(from%20clipboard).lua</source>
+      </version>
+      <version name="1.2" author="ewan" time="2026-10-10T01:32:10Z">
+        <changelog><![CDATA[removes spaces from strings before replacing names.]]></changelog>
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/21e84c974d606aeb822439c97df871e819c87c84/ewan%20-%20Utilities/ewan%20-%20Rename%20Items%20Using%20Lookup%20Table%20(from%20clipboard).lua</source>
       </version>
     </reapack>
     <reapack name="ewan - Rename Selected Items to Match Closest Preceding Marker.lua" type="script" desc="Rename Selected Items to Match Closest Preceding Marker.">
