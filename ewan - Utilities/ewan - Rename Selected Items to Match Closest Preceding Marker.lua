@@ -1,8 +1,8 @@
 -- @description Rename Selected Items to Match Closest Preceding Marker.
 -- @author ewan
--- @version 1.1
+-- @version 1
 -- @changelog
---   Now only renames items on selected tracks. This ensures only top-level items are renamed, and not children.
+--   Now renames notes if item has no takes (used for blank media items)
 -- @about
 --   Looks for the closest marker before each selected items and renames each after that.
 
@@ -10,8 +10,6 @@
 -- note: quick scripting, bit messy
 
 reaper.Undo_BeginBlock()
-
-track = reaper.GetSelectedTrack(0, 0)
 
 count_sel_items = reaper.CountSelectedMediaItems(0)
   if count_sel_items > 0 then
@@ -25,7 +23,7 @@ count_sel_items = reaper.CountSelectedMediaItems(0)
       itemLength = reaper.GetMediaItemInfo_Value(item, "D_LENGTH")
       bestPos = 0
       bestMarker = ""
-      itemTrack = reaper.GetMediaItem_Track(item)
+      
       markerCount, regionCount = reaper.CountProjectMarkers(0)
       -- find closest preceding marker
       for i = 0, regionCount -1 do
@@ -42,14 +40,14 @@ count_sel_items = reaper.CountSelectedMediaItems(0)
       end
     
      retval, isrgn, pos, rgnend, bestMarkerName, markrgnindexnumber, color = reaper.EnumProjectMarkers3(0, bestMarker)
-      if itemTrack == track then
-          if take then
-        reaper.GetSetMediaItemTakeInfo_String(take,"P_NAME",bestMarkerName,true)
-          else
-        reaper.GetSetMediaItemInfo_String(item,"P_NAME",bestMarkerName,true)  
-        reaper.GetSetMediaItemInfo_String(item,"P_NOTES",bestMarkerName,true) 
-          end
+      
+      if take then
+    reaper.GetSetMediaItemTakeInfo_String(take,"P_NAME",bestMarkerName,true)
+      else
+    reaper.GetSetMediaItemInfo_String(item,"P_NAME",bestMarkerName,true)  
+    reaper.GetSetMediaItemInfo_String(item,"P_NOTES",bestMarkerName,true) 
       end
+
     end
   end
   

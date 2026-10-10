@@ -1,8 +1,8 @@
 -- @description Rename Items Using Lookup Table (from clipboard)
 -- @author ewan
--- @version 1
+-- @version 0.8
 -- @changelog
---   Now only renames items on first selected track, to avoid renaming child items within folder items.
+--   Now renames notes if item has no takes (used for blank media items)
 -- @about
 --   Copy two colums from a google sheet: column A will be the 'Find' values, column B will be the 'Replace' values.
 
@@ -32,9 +32,6 @@ reaper.PreventUIRefresh(1)
 
 reaper.Undo_BeginBlock()
 
--- get selected track 
-track = reaper.GetSelectedTrack(0, 0)
-
   -- Iterate through each line and insert it into the table
   for line in clipboard:gmatch("[^\n\t\r]*") do
       table.insert(configTable, line)
@@ -62,19 +59,14 @@ count_sel_items = reaper.CountSelectedMediaItems(0)
         output = string.gsub(takeName,eventString.."$",assetString)
         output = string.gsub(output,eventString.."%.",assetString)
         
-        
-        itemTrack = reaper.GetMediaItem_Track(item)
-        if itemTrack == track then
-          -- rename takes or item
-          if take then
-          reaper.GetSetMediaItemTakeInfo_String(take,"P_NAME",output,true)
-          else
-          reaper.GetSetMediaItemInfo_String(item,"P_NOTES",output,true)
-          end
+        if take then
+        reaper.GetSetMediaItemTakeInfo_String(take,"P_NAME",output,true)
+        else
+        reaper.GetSetMediaItemInfo_String(item,"P_NOTES",output,true)
         end
         
         -- keeps track of how many renames have taken place.
-        if output ~= takeName and itemTrack == track then
+        if output ~= takeName then
         renameCount = renameCount+1
         if recolour then
             if take then
@@ -84,7 +76,6 @@ count_sel_items = reaper.CountSelectedMediaItems(0)
               end
           end
         end
-        
         if take then
         takeName = reaper.GetTakeName(take)
         else
