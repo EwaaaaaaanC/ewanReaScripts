@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ewan's ReaScripts" commit="59e10d4123cf6d6ce9c86a729c8e1168209929fd">
+<index version="1" name="ewan's ReaScripts" commit="00a9bb23736b0a7702188ddc9c18c53da39d0d17">
   <category name="ewan - Batch Processing Scripts">
     <reapack name="ewan - Create Pooled Automation Items For Selected Items (No Name Prompt).lua" type="script" desc="Create Pooled Automation Items For Selected Items (No Name Prompt)">
       <metadata>
@@ -275,6 +275,10 @@ Concatenate names feature now checks for duplicate region names and doesn't conc
       </metadata>
       <version name="1.0" author="ewan" time="2026-03-10T21:50:18Z">
         <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/c81f0e302b1ee38c5c8fd65635b6409511d34d41/ewan%20-%20Create%20Marker%20Scripts/ewan%20-%20Create%20Marker%20from%20Clipboard%20At%20Edit%20Cursor.lua</source>
+      </version>
+      <version name="1.1" author="ewan" time="2026-10-12T02:43:37Z">
+        <changelog><![CDATA[Now removes spaces from end of clipboard.]]></changelog>
+        <source main="main">https://github.com/EwaaaaaaanC/ewanReaScripts/raw/00a9bb23736b0a7702188ddc9c18c53da39d0d17/ewan%20-%20Create%20Marker%20Scripts/ewan%20-%20Create%20Marker%20from%20Clipboard%20At%20Edit%20Cursor.lua</source>
       </version>
     </reapack>
     <reapack name="ewan - Create Marker from Clipboard with Find and Replace.lua" type="script" desc="Create Marker from Clipboard at Edit Cursor with Find and Replace">
