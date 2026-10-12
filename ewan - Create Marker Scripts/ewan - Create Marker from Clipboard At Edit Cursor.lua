@@ -1,6 +1,8 @@
 -- @description Create Marker from Clipboard at Edit Cursor
 -- @author ewan
--- @version 1.0
+-- @version 1.1
+-- @changelog
+--   Now removes spaces from end of clipboard.
 -- @about
 --   Create Marker from Clipboard at Edit Cursor
 
@@ -32,6 +34,9 @@ local HEX_COLOR = #HEX_COLOR == 4 and HEX_COLOR:gsub('%w','%0%0') or HEX_COLOR
 local R,G,B = hex2rgb(HEX_COLOR) -- R because r is already taken by reaper, the rest is for consistency
 
 
+markerNAME = string.gsub(markerNAME,"%s+$","")
+
+
 r.Undo_BeginBlock()
 
 r.AddProjectMarker2(0, false, cur_pos, 0, markerNAME, -1, r.ColorToNative(R,G,B)|0x1000000)
@@ -39,6 +44,5 @@ r.AddProjectMarker2(0, false, cur_pos, 0, markerNAME, -1, r.ColorToNative(R,G,B)
 r.Undo_EndBlock('Insert marker: '..markerNAME,-1)
 
 r.PreventUIRefresh(-1)
-
 
 
