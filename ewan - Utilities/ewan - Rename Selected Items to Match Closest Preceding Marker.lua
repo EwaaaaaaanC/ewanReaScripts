@@ -1,8 +1,8 @@
 -- @description Rename Selected Items to Match Closest Preceding Marker.
 -- @author ewan
--- @version 1.1
+-- @version 1.2
 -- @changelog
---   Now only renames items on selected tracks. This ensures only top-level items are renamed, and not children.
+--   Bug fix. Used wrong count for number of markers.
 -- @about
 --   Looks for the closest marker before each selected items and renames each after that.
 
@@ -27,6 +27,8 @@ count_sel_items = reaper.CountSelectedMediaItems(0)
       bestMarker = ""
       itemTrack = reaper.GetMediaItem_Track(item)
       markerCount, regionCount = reaper.CountProjectMarkers(0)
+      
+      regionCount = regionCount + markerCount
       -- find closest preceding marker
       for i = 0, regionCount -1 do
       
